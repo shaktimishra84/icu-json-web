@@ -13,21 +13,21 @@ try:
 except Exception:
     GS_READY = False
 
+# ---------- Settings ----------
 TIMEZONE = ZoneInfo("Asia/Kolkata")
 DATA_DIR = Path(__file__).parent / "data" / "algorithms"
 
 st.set_page_config(page_title="ICU Assistant", layout="wide")
-st.caption("build: 2025-10-24 20:35 IST")
+st.caption("build: 2025-10-24 21:10 IST")
 
-# ---------- Data helpers ----------
+# ---------- Helpers ----------
 @st.cache_data(show_spinner=False)
 def list_files():
     return sorted(p for p in DATA_DIR.rglob("*.json") if p.is_file())
 
 @st.cache_data(show_spinner=False)
 def load_json(p: Path):
-    txt = p.read_text(encoding="utf-8")
-    return json.loads(txt)
+    return json.loads(p.read_text(encoding="utf-8"))
 
 def pretty(p: Path) -> str:
     n = re.sub(r"\.json$", "", p.name, flags=re.I)
@@ -43,7 +43,8 @@ def start_case(issue_path: Path, resident: str, patient_id: str):
     st.session_state["patient_id"] = patient_id.strip()
     st.session_state["case_id"] = datetime.now(TIMEZONE).strftime("case-%Y%m%d-%H%M%S-IST")
     st.session_state["node_id"] = None
-    st.session_state["log"] = []   # list of dicts
+    st.session_state["log"] = []            # list[dict]
+    st.session_state["orders_cart"] = []    # list[str]
 
 def log_step(node_id: str, node_text: str, action_label: str, next_id: str):
     st.session_state["log"].append({
@@ -64,16 +65,16 @@ def csv_from_rows(rows: list, headers: list):
     return s.getvalue()
 
 def nodes_table_from_flow(flow: dict):
-    nodes = flow.get("nodes", [])
     out = []
-    for n in nodes:
+    for n in flow.get("nodes", []):
         opts = ", ".join([o.get("label","") for o in n.get("options", [])]) if n.get("options") else ""
         out.append({"id": n.get("id",""), "end": bool(n.get("end", False)), "text": n.get("text",""), "options": opts})
     return out
 
 # ---------- Google Sheets ----------
 def _gs_client():
-    if not GS_READY: return None, None
+    if not GS_READY:
+        return None, None
     sa_json = st.secrets.get("GSHEETS_SA_JSON", None)
     sheet_url = st.secrets.get("GSHEET_URL", None)
     if not sa_json or not sheet_url:
@@ -86,21 +87,24 @@ def _gs_client():
     gc = gspread.authorize(creds)
     return gc, sheet_url
 
-def save_log_to_gsheet(meta: dict):
+def save_to_gsheet(meta: dict, orders: list[str]):
     gc, sheet_url = _gs_client()
     if not gc:
         st.warning("Google Sheets not configured in Secrets.")
         return False
+
     sh = gc.open_by_url(sheet_url)
+
+    # transcripts sheet (one row per step)
     try:
-        ws = sh.worksheet("transcripts")
+        ws_t = sh.worksheet("transcripts")
     except Exception:
-        ws = sh.add_worksheet(title="transcripts", rows=1000, cols=12)
-        ws.append_row(["case_id","issue","resident","patient_id",
-                       "timestamp_ist","timestamp_utc","node_id","node_text","choice","next_node"])
-    rows = []
+        ws_t = sh.add_worksheet(title="transcripts", rows=1000, cols=12)
+        ws_t.append_row(["case_id","issue","resident","patient_id",
+                         "timestamp_ist","timestamp_utc","node_id","node_text","choice","next_node"])
+    t_rows = []
     for r in meta["log"]:
-        rows.append([
+        t_rows.append([
             meta.get("case_id",""),
             meta.get("issue",""),
             meta.get("resident",""),
@@ -112,8 +116,27 @@ def save_log_to_gsheet(meta: dict):
             r.get("choice",""),
             r.get("next_node",""),
         ])
-    if rows:
-        ws.append_rows(rows, value_input_option="RAW")
+    if t_rows:
+        ws_t.append_rows(t_rows, value_input_option="RAW")
+
+    # orders sheet (one row per unique order)
+    if orders:
+        try:
+            ws_o = sh.worksheet("orders")
+        except Exception:
+            ws_o = sh.add_worksheet(title="orders", rows=1000, cols=8)
+            ws_o.append_row(["case_id","issue","resident","patient_id","order"])
+        o_rows = []
+        for od in orders:
+            o_rows.append([
+                meta.get("case_id",""),
+                meta.get("issue",""),
+                meta.get("resident",""),
+                meta.get("patient_id",""),
+                od
+            ])
+        ws_o.append_rows(o_rows, value_input_option="RAW")
+
     return True
 
 # ---------- App ----------
@@ -124,22 +147,25 @@ if not files:
 if st.button("Reload files"):
     st.cache_data.clear(); st.rerun()
 
-# Home
+# Home screen
 if "issue_path" not in st.session_state:
     st.title("ICU Assistant")
     q = st.text_input("search issues")
     view = [p for p in files if (q.lower() in p.name.lower())] if q else files
     choice = st.selectbox("select issue", view, index=0, format_func=pretty)
+
     c1, c2 = st.columns(2)
     with c1: resident = st.text_input("resident name (optional)")
     with c2: patient_id = st.text_input("patient id/case id (optional)")
+
     if st.button("start"):
         start_case(choice, resident, patient_id)
         st.rerun()
-    st.caption(f"loaded {len(files)} files. add 'assistant_flow' to enable guidance.")
+
+    st.caption(f"loaded {len(files)} files. add 'assistant_flow' + optional 'orders' arrays inside nodes.")
     st.stop()
 
-# Guide
+# Guide screen
 issue = Path(st.session_state["issue_path"])
 st.button("← back", on_click=go_home)
 st.header(pretty(issue))
@@ -169,8 +195,23 @@ if "node_id" not in st.session_state or st.session_state["node_id"] is None:
 nid = st.session_state["node_id"]
 node = nodes.get(nid, {})
 
+# Step text
 st.markdown(node.get("text", ""))
 
+# Tests / orders at this step (optional JSON field `orders`: list[str])
+orders = node.get("orders", [])
+if orders:
+    st.subheader("Tests to send")
+    for o in orders:
+        st.markdown(f"• {o}")
+    if st.button("Add these to case orders"):
+        cart = st.session_state.get("orders_cart", [])
+        for o in orders:
+            if o not in cart:
+                cart.append(o)
+        st.session_state["orders_cart"] = cart
+
+# Options
 if node.get("end"):
     st.success("end of path")
 else:
@@ -183,6 +224,7 @@ else:
 
 st.divider()
 
+# Reference: nodes table
 with st.expander("nodes (reference)", expanded=False):
     tbl = nodes_table_from_flow(flow)
     st.table(tbl)
@@ -190,6 +232,7 @@ with st.expander("nodes (reference)", expanded=False):
     st.download_button("download nodes (csv)", data=nodes_csv,
                        file_name=f"{issue.stem}_nodes.csv", mime="text/csv")
 
+# Transcript + save/export
 with st.expander("transcript (choices made)", expanded=True):
     log = st.session_state.get("log", [])
     if not log:
@@ -197,36 +240,50 @@ with st.expander("transcript (choices made)", expanded=True):
     else:
         for i, r in enumerate(log, 1):
             st.write(f"{i}. [{r['timestamp_ist']}] at {r['node_id']} → “{r['choice']}”")
-        meta = {
-            "case_id": st.session_state.get("case_id",""),
-            "issue": pretty(issue),
-            "resident": st.session_state.get("resident",""),
-            "patient_id": st.session_state.get("patient_id",""),
-            "log": log
-        }
-        json_blob = json.dumps(meta, ensure_ascii=False, indent=2)
-        csv_blob = csv_from_rows(log, ["timestamp_ist","timestamp_utc","node_id","node_text","choice","next_node"])
-        c1, c2, c3 = st.columns(3)
-        with c1:
-            st.download_button("download transcript (json)", data=json_blob,
-                               file_name=f"{meta['case_id'] or 'case'}.json", mime="application/json")
-        with c2:
-            st.download_button("download transcript (csv)", data=csv_blob,
-                               file_name=f"{meta['case_id'] or 'case'}.csv", mime="text/csv")
-        with c3:
-            if GS_READY and st.button("save to google sheet"):
-                ok = save_log_to_gsheet(meta)
-                if ok: st.success("saved to Google Sheet")
-            elif not GS_READY:
-                st.caption("install gspread + google-auth to enable Google Sheets save.")
-            else:
-                st.caption("set Secrets: GSHEETS_SA_JSON and GSHEET_URL to enable save.")
 
+    meta = {
+        "case_id": st.session_state.get("case_id",""),
+        "issue": pretty(issue),
+        "resident": st.session_state.get("resident",""),
+        "patient_id": st.session_state.get("patient_id",""),
+        "log": log
+    }
+    json_blob = json.dumps(meta, ensure_ascii=False, indent=2)
+    csv_blob = csv_from_rows(log, ["timestamp_ist","timestamp_utc","node_id","node_text","choice","next_node"])
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.download_button("download transcript (json)", data=json_blob,
+                           file_name=f"{meta['case_id'] or 'case'}.json", mime="application/json")
+    with c2:
+        st.download_button("download transcript (csv)", data=csv_blob,
+                           file_name=f"{meta['case_id'] or 'case'}.csv", mime="text/csv")
+    with c3:
+        if GS_READY and st.button("save to google sheet"):
+            ok = save_to_gsheet(meta, st.session_state.get("orders_cart", []))
+            if ok: st.success("saved to Google Sheet")
+        elif not GS_READY:
+            st.caption("install gspread + google-auth to enable Google Sheets save.")
+        else:
+            st.caption("set Secrets: GSHEETS_SA_JSON + GSHEET_URL to enable save.")
+
+# Case orders review/export
+with st.expander("case orders", expanded=False):
+    cart = st.session_state.get("orders_cart", [])
+    if not cart:
+        st.write("no orders yet")
+    else:
+        txt = "\n".join(f"- {o}" for o in cart)
+        st.code(txt)
+        st.download_button("download orders (.txt)", data=txt,
+                           file_name=f"{st.session_state.get('case_id','case')}_orders.txt")
+
+# Footer controls
 c1, c2 = st.columns(2)
 with c1:
     if st.button("restart case"):
         st.session_state["node_id"] = start
         st.session_state["log"] = []
+        st.session_state["orders_cart"] = []
         st.rerun()
 with c2:
     if st.button("new case"):
