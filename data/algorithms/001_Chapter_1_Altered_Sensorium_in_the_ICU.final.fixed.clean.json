@@ -1,244 +1,39 @@
 {
   "chapter_file": "001_Chapter_1_Altered_Sensorium_in_the_ICU.pdf",
   "title_guess": "001_Chapter_1_Altered_Sensorium_in_the_ICU",
-  "clinical_graph": {
-    "title": "Altered sensorium – ICU initial approach",
-    "graph": {
-      "nodes": [
-        {
-          "id": "n1",
-          "type": "start",
-          "text": "Altered sensorium – ICU initial approach"
-        },
-        {
-          "id": "n2",
-          "type": "decision",
-          "text": "If GCS < 8 or airway obstruction.",
-          "condition": "GCS < 8 or airway obstruction"
-        },
-        {
-          "id": "n3",
-          "type": "action",
-          "text": "Intubate and secure airway; consider RSI. If trauma suspected, maintain cervical spine precautions."
-        },
-        {
-          "id": "n4",
-          "type": "action",
-          "text": "Proceed if airway protected."
-        },
-        {
-          "id": "n5",
-          "type": "decision",
-          "text": "If SBP < 100 mmHg or MAP < 65 mmHg.",
-          "condition": "SBP<100 or MAP<65"
-        },
-        {
-          "id": "n6",
-          "type": "action",
-          "text": "Resuscitate with isotonic IV fluids; if MAP remains <65 after fluids, start vasopressors to target MAP ≥65 mmHg."
-        },
-        {
-          "id": "n7",
-          "type": "action",
-          "text": "Proceed to glucose check."
-        },
-        {
-          "id": "n8",
-          "type": "decision",
-          "text": "If glucose < 70 mg/dL.",
-          "condition": "glucose<70 mg/dL"
-        },
-        {
-          "id": "n9",
-          "type": "action",
-          "text": "Give IV dextrose 25 g (50 mL of 50% dextrose) and recheck glucose in 5–10 min; repeat if <70 mg/dL."
-        },
-        {
-          "id": "n10",
-          "type": "action",
-          "text": "If euglycemic, assess for seizures."
-        },
-        {
-          "id": "n11",
-          "type": "action",
-          "text": "Look for seizures."
-        },
-        {
-          "id": "n12",
-          "type": "decision",
-          "text": "If seizures present.",
-          "condition": "seizures present"
-        },
-        {
-          "id": "n13",
-          "type": "action",
-          "text": "Treat seizures: benzodiazepine first-line (e.g., lorazepam 2 mg IV, may repeat); then load antiepileptic (e.g., levetiracetam 1–3 g IV)."
-        },
-        {
-          "id": "n14",
-          "type": "action",
-          "text": "Evaluate for structural/metabolic/toxic causes."
-        },
-        {
-          "id": "n15",
-          "type": "decision",
-          "text": "If specific toxicological cause suspected.",
-          "condition": "tox cause suspected"
-        },
-        {
-          "id": "n16",
-          "type": "action",
-          "text": "Administer specific antidote per tox protocol (e.g., naloxone for opioids; flumazenil only in select cases; give thiamine if deficiency suspected)."
-        },
-        {
-          "id": "n17",
-          "type": "action",
-          "text": "If no tox cause, proceed with imaging and labs."
-        },
-        {
-          "id": "n18",
-          "type": "action",
-          "text": "Non-contrast CT brain; urgent if focal deficits, head trauma, or suspected intracranial bleed."
-        },
-        {
-          "id": "n19",
-          "type": "action",
-          "text": "Labs: glucose; electrolytes (Na, K, Ca); renal and liver panels; CBC; ABG; ECG. Add ammonia, TSH, and toxicology screen as indicated."
-        },
-        {
-          "id": "n20",
-          "type": "action",
-          "text": "Consider optic nerve sheath diameter ultrasound if raised ICP suspected; manage ICP (head-up, mannitol or hypertonic saline) per protocol."
-        },
-        {
-          "id": "n21",
-          "type": "end",
-          "text": "Disposition per findings (ICU/ward/OR)"
-        }
-      ],
-      "edges": [
-        {
-          "from": "n1",
-          "to": "n2",
-          "label": null
-        },
-        {
-          "from": "n2",
-          "to": "n3",
-          "label": "Yes"
-        },
-        {
-          "from": "n2",
-          "to": "n4",
-          "label": "No"
-        },
-        {
-          "from": "n3",
-          "to": "n5",
-          "label": null
-        },
-        {
-          "from": "n5",
-          "to": "n6",
-          "label": "Yes"
-        },
-        {
-          "from": "n5",
-          "to": "n7",
-          "label": "No"
-        },
-        {
-          "from": "n7",
-          "to": "n8",
-          "label": null
-        },
-        {
-          "from": "n8",
-          "to": "n9",
-          "label": "Yes"
-        },
-        {
-          "from": "n8",
-          "to": "n10",
-          "label": "No"
-        },
-        {
-          "from": "n10",
-          "to": "n11",
-          "label": null
-        },
-        {
-          "from": "n11",
-          "to": "n12",
-          "label": null
-        },
-        {
-          "from": "n12",
-          "to": "n13",
-          "label": "Yes"
-        },
-        {
-          "from": "n12",
-          "to": "n14",
-          "label": "No"
-        },
-        {
-          "from": "n14",
-          "to": "n15",
-          "label": null
-        },
-        {
-          "from": "n15",
-          "to": "n16",
-          "label": "Yes"
-        },
-        {
-          "from": "n15",
-          "to": "n17",
-          "label": "No"
-        },
-        {
-          "from": "n17",
-          "to": "n18",
-          "label": null
-        },
-        {
-          "from": "n18",
-          "to": "n19",
-          "label": null
-        },
-        {
-          "from": "n19",
-          "to": "n20",
-          "label": null
-        },
-        {
-          "from": "n20",
-          "to": "n21",
-          "label": null
-        },
-        {
-          "from": "n4",
-          "to": "n5"
-        },
-        {
-          "from": "n6",
-          "to": "n7"
-        },
-        {
-          "from": "n9",
-          "to": "n10"
-        },
-        {
-          "from": "n13",
-          "to": "n14"
-        },
-        {
-          "from": "n16",
-          "to": "n17"
-        }
-      ]
-    }
+
+  "assistant_flow": {
+    "start": "A1",
+    "nodes": [
+      { "id": "A1", "text": "Airway compromised (GCS < 8 or pooling secretions)?",
+        "options": [ { "label": "Yes", "next": "AIRWAY" }, { "label": "No", "next": "A2" } ] },
+
+      { "id": "AIRWAY", "text": "Intubate and secure airway; suction; C-spine if trauma; then continue.", "end": true },
+
+      { "id": "A2", "text": "SpO₂ < 94%?",
+        "options": [ { "label": "Yes", "next": "OXY" }, { "label": "No", "next": "A3" } ] },
+
+      { "id": "OXY", "text": "Give oxygen; optimize ventilation; reassess.", "end": true },
+
+      { "id": "A3", "text": "SBP < 100 or MAP < 65?",
+        "options": [ { "label": "Yes", "next": "CIRC" }, { "label": "No", "next": "A4" } ] },
+
+      { "id": "CIRC", "text": "Fluids; start vasopressor if MAP < 65 after fluids.", "end": true },
+
+      { "id": "A4", "text": "Glucose < 70 mg/dL?",
+        "options": [ { "label": "Yes", "next": "DEX" }, { "label": "No", "next": "A5" } ] },
+
+      { "id": "DEX", "text": "Give IV dextrose; recheck; treat cause.", "end": true },
+
+      { "id": "A5", "text": "Any seizure activity?",
+        "options": [ { "label": "Yes", "next": "SEIZ" }, { "label": "No", "next": "A6" } ] },
+
+      { "id": "SEIZ", "text": "Treat per seizure algorithm; protect airway; plan NCCT when stable.", "end": true },
+
+      { "id": "A6", "text": "Proceed: NCCT brain; targeted labs (ABG, lytes, RFT/LFT, CBC, ± ammonia/TSH/tox). Consider ONSD if raised ICP. Categorize cause and manage.", "end": true }
+    ]
   },
+
+  "clinical_graph": { ... },
   "source": "v4_from_v3"
 }
