@@ -1,0 +1,320 @@
+{
+  "chapter_file": "009_Chapter_9_Management_of_Aneurysmal_Subarachnoid_Hemorrhage_aSAH_in_the_ICU.json",
+  "title_guess": "009_Chapter_9_Management_of_Aneurysmal_Subarachnoid_Hemorrhage_aSAH_in_the_ICU",
+  "clinical_graph": {
+    "title": "Aneurysmal subarachnoid hemorrhage (aSAH) — ICU pathway",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Aneurysmal subarachnoid hemorrhage (aSAH) — ICU pathway"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; analgesia/antiemetics; head up 30°; avoid noxious surges."
+        },
+        {
+          "id": "n3",
+          "type": "decision",
+          "text": "Is SBP ≥160 mmHg or MAP ≥110 mmHg?",
+          "condition": "BP high"
+        },
+        {
+          "id": "n4",
+          "type": "action",
+          "text": "Titrate short-acting IV agents to SBP <160 or MAP <110; avoid large fluctuations."
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "BP acceptable; proceed."
+        },
+        {
+          "id": "n6",
+          "type": "decision",
+          "text": "On anticoagulant/antiplatelet requiring reversal?",
+          "condition": "antithrombotic use"
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Reverse anticoagulation per agent (idarucizumab/andexanet/PCC; vitamin K for warfarin)."
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "No reversal needed."
+        },
+        {
+          "id": "n9",
+          "type": "decision",
+          "text": "Hydrocephalus or decreased consciousness from CSF obstruction?",
+          "condition": "hydrocephalus/low consciousness"
+        },
+        {
+          "id": "n10",
+          "type": "action",
+          "text": "Place external ventricular drain (EVD) to treat hydrocephalus and control ICP."
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "No hydrocephalus; continue monitoring."
+        },
+        {
+          "id": "n12",
+          "type": "action",
+          "text": "Start nimodipine 60 mg orally every 4 h; continue for 21 days. Hold or reduce dose if hypotensive"
+        },
+        {
+          "id": "n13",
+          "type": "decision",
+          "text": "Is endovascular coiling anatomically feasible/preferred?",
+          "condition": "coiling feasible"
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Secure aneurysm with endovascular coiling (preferred if feasible, esp. posterior circulation). Aim to secure aneurysm within 24 h where feasible"
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "Secure aneurysm with surgical clipping (e.g., unfavorable anatomy/younger patients). Aim to secure aneurysm within 24 h where feasible"
+        },
+        {
+          "id": "n16",
+          "type": "action",
+          "text": "Avoid routine antifibrinolytic therapy due to thromboembolic/ischemic risks."
+        },
+        {
+          "id": "n17",
+          "type": "action",
+          "text": "Monitor for vasospasm/DCI: neuro checks; TCD; CTA/CTP as indicated."
+        },
+        {
+          "id": "n18",
+          "type": "decision",
+          "text": "Clinical/imaging evidence of DCI/vasospasm?",
+          "condition": "vasospasm/DCI present"
+        },
+        {
+          "id": "n19",
+          "type": "action",
+          "text": "Induce hypertension to improve cerebral perfusion (if no contraindication); close monitoring."
+        },
+        {
+          "id": "n20",
+          "type": "action",
+          "text": "Consider endovascular rescue: intra-arterial vasodilators or balloon angioplasty."
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "No DCI: continue monitoring and prevention bundle."
+        },
+        {
+          "id": "n22",
+          "type": "decision",
+          "text": "Raised ICP or herniation risk?",
+          "condition": "raised ICP"
+        },
+        {
+          "id": "n23",
+          "type": "action",
+          "text": "ICP bundle: head-up; adequate sedation/analgesia; hyperosmolar therapy; PaCO₂ 35–40 mmHg; CSF diversion via EVD if needed."
+        },
+        {
+          "id": "n24",
+          "type": "action",
+          "text": "ICP acceptable; proceed."
+        },
+        {
+          "id": "n25",
+          "type": "action",
+          "text": "Maintain euvolemia; avoid hypotonic fluids; correct electrolytes carefully. Monitor sodium; treat hyponatremia (salt wasting/SIADH) with isotonic/hypertonic saline as indicated; maintain glucose 140–180 mg/dL and normothermia"
+        },
+        {
+          "id": "n26",
+          "type": "decision",
+          "text": "Seizure or high-risk features (e.g., high-grade aSAH IV–V or intraparenchymal bleed)?",
+          "condition": "seizure/high risk"
+        },
+        {
+          "id": "n27",
+          "type": "action",
+          "text": "Treat seizures with AEDs; duration per neurology. Avoid routine prophylaxis otherwise."
+        },
+        {
+          "id": "n28",
+          "type": "action",
+          "text": "No routine antiseizure prophylaxis; continue clinical/EEG surveillance as indicated."
+        },
+        {
+          "id": "n29",
+          "type": "end",
+          "text": "Ongoing ICU care; prevent complications; rehab and follow-up planning."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4",
+          "label": "Yes"
+        },
+        {
+          "from": "n3",
+          "to": "n5",
+          "label": "No"
+        },
+        {
+          "from": "n4",
+          "to": "n6"
+        },
+        {
+          "from": "n5",
+          "to": "n6"
+        },
+        {
+          "from": "n6",
+          "to": "n7",
+          "label": "Yes"
+        },
+        {
+          "from": "n6",
+          "to": "n8",
+          "label": "No"
+        },
+        {
+          "from": "n7",
+          "to": "n9"
+        },
+        {
+          "from": "n8",
+          "to": "n9"
+        },
+        {
+          "from": "n9",
+          "to": "n10",
+          "label": "Yes"
+        },
+        {
+          "from": "n9",
+          "to": "n11",
+          "label": "No"
+        },
+        {
+          "from": "n10",
+          "to": "n12"
+        },
+        {
+          "from": "n11",
+          "to": "n12"
+        },
+        {
+          "from": "n12",
+          "to": "n13"
+        },
+        {
+          "from": "n13",
+          "to": "n14",
+          "label": "Yes"
+        },
+        {
+          "from": "n13",
+          "to": "n15",
+          "label": "No"
+        },
+        {
+          "from": "n14",
+          "to": "n16"
+        },
+        {
+          "from": "n15",
+          "to": "n16"
+        },
+        {
+          "from": "n16",
+          "to": "n17"
+        },
+        {
+          "from": "n17",
+          "to": "n18"
+        },
+        {
+          "from": "n18",
+          "to": "n19",
+          "label": "Yes"
+        },
+        {
+          "from": "n19",
+          "to": "n20"
+        },
+        {
+          "from": "n18",
+          "to": "n21",
+          "label": "No"
+        },
+        {
+          "from": "n20",
+          "to": "n22"
+        },
+        {
+          "from": "n21",
+          "to": "n22"
+        },
+        {
+          "from": "n22",
+          "to": "n23",
+          "label": "Yes"
+        },
+        {
+          "from": "n22",
+          "to": "n24",
+          "label": "No"
+        },
+        {
+          "from": "n23",
+          "to": "n25"
+        },
+        {
+          "from": "n24",
+          "to": "n25"
+        },
+        {
+          "from": "n25",
+          "to": "n26"
+        },
+        {
+          "from": "n26",
+          "to": "n27",
+          "label": "Yes"
+        },
+        {
+          "from": "n26",
+          "to": "n28",
+          "label": "No"
+        },
+        {
+          "from": "n27",
+          "to": "n29"
+        },
+        {
+          "from": "n28",
+          "to": "n29"
+        }
+      ]
+    }
+  },
+  "source": "asah_v1_from_text"
+}

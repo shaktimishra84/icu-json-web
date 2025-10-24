@@ -1,0 +1,182 @@
+{
+  "chapter_file": "005_Chapter_5_Approach_to_Psychogenic_Coma_in_the_ICU.json",
+  "title_guess": "005_Chapter_5_Approach_to_Psychogenic_Coma_in_the_ICU",
+  "clinical_graph": {
+    "title": "Psychogenic (functional) unresponsiveness — ICU approach",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Psychogenic (functional) unresponsiveness — ICU approach"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; check glucose, SpO₂, temperature; treat immediately reversible causes."
+        },
+        {
+          "id": "n3",
+          "type": "decision",
+          "text": "Organic red flags present (hypoxia, hypotension, fever, focal signs, meningism, trauma, tox)?",
+          "condition": "organic red flags present"
+        },
+        {
+          "id": "n4",
+          "type": "action",
+          "text": "Follow organic coma pathway and continue medical workup."
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Focused neuro exam: brainstem reflexes (pupils, corneal, oculocephalic if C-spine cleared), gag/cough, motor tone, command-follow."
+        },
+        {
+          "id": "n6",
+          "type": "decision",
+          "text": "Inconsistent with coma (eyelid resistance/up-rolling, OKN present, avoidance to drop test, purposeful repositioning)?",
+          "condition": "inconsistent coma signs present"
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Probable psychogenic unresponsiveness; calm, low-stimulus environment; avoid painful/noxious stimuli."
+        },
+        {
+          "id": "n8",
+          "type": "decision",
+          "text": "Risk to self/staff (agitation, elopement)?",
+          "condition": "safety risk present"
+        },
+        {
+          "id": "n9",
+          "type": "action",
+          "text": "Use minimal restraints per policy and 1:1 observation; prioritize de-escalation."
+        },
+        {
+          "id": "n10",
+          "type": "action",
+          "text": "Avoid restraints; provide reassurance and clear communication."
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "Psychiatry consult; identify precipitants/stressors; supportive measures and early engagement."
+        },
+        {
+          "id": "n12",
+          "type": "decision",
+          "text": "Persistent diagnostic uncertainty or seizure/withdrawal risk?",
+          "condition": "uncertainty or seizure/withdrawal risk"
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "Obtain EEG to exclude NCSE; targeted tox/metabolic tests as indicated."
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Minimize further testing once organic causes excluded; document positive signs of functional disorder."
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "Consider amobarbital (Amytal) interview only under specialist-led protocol if essential."
+        },
+        {
+          "id": "n16",
+          "type": "end",
+          "text": "Disposition with safety plan; arrange mental health follow-up and reassessment."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4",
+          "label": "Yes"
+        },
+        {
+          "from": "n3",
+          "to": "n5",
+          "label": "No"
+        },
+        {
+          "from": "n4",
+          "to": "n16"
+        },
+        {
+          "from": "n5",
+          "to": "n6"
+        },
+        {
+          "from": "n6",
+          "to": "n7",
+          "label": "Yes"
+        },
+        {
+          "from": "n6",
+          "to": "n12",
+          "label": "No"
+        },
+        {
+          "from": "n7",
+          "to": "n8"
+        },
+        {
+          "from": "n8",
+          "to": "n9",
+          "label": "Yes"
+        },
+        {
+          "from": "n8",
+          "to": "n10",
+          "label": "No"
+        },
+        {
+          "from": "n9",
+          "to": "n11"
+        },
+        {
+          "from": "n10",
+          "to": "n11"
+        },
+        {
+          "from": "n11",
+          "to": "n12"
+        },
+        {
+          "from": "n12",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n12",
+          "to": "n14",
+          "label": "No"
+        },
+        {
+          "from": "n13",
+          "to": "n14"
+        },
+        {
+          "from": "n14",
+          "to": "n15"
+        },
+        {
+          "from": "n15",
+          "to": "n16"
+        }
+      ]
+    }
+  },
+  "source": "psychogenic_v1_from_text"
+}

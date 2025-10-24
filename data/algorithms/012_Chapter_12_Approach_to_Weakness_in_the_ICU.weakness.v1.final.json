@@ -1,0 +1,450 @@
+{
+  "chapter_file": "012_Chapter_12_Approach_to_Weakness_in_the_ICU.json",
+  "title_guess": "012_Chapter_12_Approach_to_Weakness_in_the_ICU",
+  "clinical_graph": {
+    "title": "Approach to weakness — ICU",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Approach to weakness — ICU"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; monitor for bulbar/resp compromise; check FVC and NIF regularly."
+        },
+        {
+          "id": "n3",
+          "type": "action",
+          "text": "Point-of-care glucose; labs: electrolytes (K, Na, Ca, Mg, PO₄), renal/liver, TSH; ECG."
+        },
+        {
+          "id": "n4",
+          "type": "decision",
+          "text": "Respiratory or bulbar compromise (FVC < 15 mL/kg or NIF < −20 cmH₂O)?",
+          "condition": "resp/bulbar compromise or FVC<15 or NIF<-20"
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Prepare for intubation and ICU-level ventilation; treat cause in parallel."
+        },
+        {
+          "id": "n6",
+          "type": "action",
+          "text": "Airway/ventilation adequate; proceed with evaluation."
+        },
+        {
+          "id": "n7",
+          "type": "decision",
+          "text": "Severe electrolyte abnormality (K < 2.5 or > 6.5; Na < 120 or > 160; critical Ca/Mg/PO₄)?",
+          "condition": "severe electrolyte derangement"
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "Correct per protocol (hyperK, hypoK, dysNa, Ca/Mg/PO₄); recheck and reassess weakness."
+        },
+        {
+          "id": "n9",
+          "type": "action",
+          "text": "No critical electrolyte issue; proceed."
+        },
+        {
+          "id": "n10",
+          "type": "action",
+          "text": "Post-correction reassessment."
+        },
+        {
+          "id": "n11",
+          "type": "decision",
+          "text": "Central signs (UMN signs, sensory level, sphincter, altered sensorium, acute stroke/cord)?",
+          "condition": "central involvement suspected"
+        },
+        {
+          "id": "n12",
+          "type": "action",
+          "text": "Urgent imaging: brain/spine as indicated; treat cause (stroke, cord compression, myelitis)."
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "Peripheral pattern suspected; proceed."
+        },
+        {
+          "id": "n14",
+          "type": "decision",
+          "text": "Bulbar/ocular fatigable weakness (ptosis/diplopia, diurnal variation)?",
+          "condition": "NMJ features present"
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "NMJ pathway: monitor FVC/NIF; AChR/MuSK Ab if MG suspected; consider LEMS features."
+        },
+        {
+          "id": "n16",
+          "type": "action",
+          "text": "No clear NMJ features; consider nerve/muscle etiologies."
+        },
+        {
+          "id": "n17",
+          "type": "decision",
+          "text": "Crisis or impending crisis (resp/bulbar compromise)?",
+          "condition": "MG/LEMS crisis"
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "Start IVIG or plasma exchange; ICU airway plan; hold/adjust pyridostigmine if ventilated."
+        },
+        {
+          "id": "n19",
+          "type": "action",
+          "text": "Stable NMJ weakness: pyridostigmine; start immunotherapy per protocol; search malignancy if LEMS."
+        },
+        {
+          "id": "n20",
+          "type": "decision",
+          "text": "Botulism risk (wound/ingestion; autonomic/GI features)?",
+          "condition": "botulism suspected"
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "Administer botulinum antitoxin; wound care/antibiotics as indicated; ICU monitoring."
+        },
+        {
+          "id": "n22",
+          "type": "action",
+          "text": "No botulism features; continue NMJ workup/treatment."
+        },
+        {
+          "id": "n23",
+          "type": "decision",
+          "text": "Areflexia with ascending, relatively symmetric weakness ± paresthesias?",
+          "condition": "GBS phenotype"
+        },
+        {
+          "id": "n24",
+          "type": "action",
+          "text": "Suspect GBS: IVIG or plasma exchange; avoid steroids; autonomic monitoring; FVC/NIF q4–6 h."
+        },
+        {
+          "id": "n25",
+          "type": "action",
+          "text": "Not classic GBS; consider CIP/CIM or other neuropathy."
+        },
+        {
+          "id": "n26",
+          "type": "decision",
+          "text": "ICU-acquired weakness risk (sepsis, MOF, prolonged ventilation/sedation)?",
+          "condition": "CIP/CIM risk"
+        },
+        {
+          "id": "n27",
+          "type": "action",
+          "text": "CIP/CIM care: early mobilization, minimize sedation/steroids, optimize glycemia/nutrition; treat sepsis."
+        },
+        {
+          "id": "n28",
+          "type": "action",
+          "text": "Consider focal/multifocal neuropathies; EMG/NCS; targeted imaging as indicated."
+        },
+        {
+          "id": "n29",
+          "type": "decision",
+          "text": "Proximal > distal weakness or myalgia with CK elevation?",
+          "condition": "myopathy suspected"
+        },
+        {
+          "id": "n30",
+          "type": "action",
+          "text": "Myopathy/myositis: CK/AST/ALT; rheum/myositis panel; consider steroids if inflammatory; avoid myotoxic agents."
+        },
+        {
+          "id": "n31",
+          "type": "action",
+          "text": "No clear myopathy; continue differential (motor neuron disease, plexopathy)."
+        },
+        {
+          "id": "n32",
+          "type": "decision",
+          "text": "Rhabdomyolysis (very high CK or myoglobinuria)?",
+          "condition": "rhabdomyolysis"
+        },
+        {
+          "id": "n33",
+          "type": "action",
+          "text": "Aggressive IV fluids; manage electrolytes; monitor renal function; treat triggers."
+        },
+        {
+          "id": "n34",
+          "type": "action",
+          "text": "No rhabdo; supportive care and targeted workup."
+        },
+        {
+          "id": "n35",
+          "type": "decision",
+          "text": "Episodic weakness with triggers (rest after exercise, high carb) and K abnormalities?",
+          "condition": "periodic paralysis suspected"
+        },
+        {
+          "id": "n36",
+          "type": "action",
+          "text": "Periodic paralysis: correct potassium carefully (↑ or ↓ type); avoid triggers; consider acetazolamide if appropriate."
+        },
+        {
+          "id": "n37",
+          "type": "action",
+          "text": "Non-episodic pattern; proceed with EMG/NCS and specialist referral."
+        },
+        {
+          "id": "n38",
+          "type": "action",
+          "text": "Arrange EMG/NCS; targeted autoantibodies; imaging as indicated; multidisciplinary follow-up."
+        },
+        {
+          "id": "n39",
+          "type": "end",
+          "text": "Ongoing ICU care and rehabilitation planning."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4"
+        },
+        {
+          "from": "n4",
+          "to": "n5",
+          "label": "Yes"
+        },
+        {
+          "from": "n4",
+          "to": "n6",
+          "label": "No"
+        },
+        {
+          "from": "n6",
+          "to": "n7"
+        },
+        {
+          "from": "n5",
+          "to": "n7"
+        },
+        {
+          "from": "n7",
+          "to": "n8",
+          "label": "Yes"
+        },
+        {
+          "from": "n7",
+          "to": "n9",
+          "label": "No"
+        },
+        {
+          "from": "n8",
+          "to": "n10"
+        },
+        {
+          "from": "n9",
+          "to": "n10"
+        },
+        {
+          "from": "n10",
+          "to": "n11"
+        },
+        {
+          "from": "n11",
+          "to": "n12",
+          "label": "Yes"
+        },
+        {
+          "from": "n11",
+          "to": "n13",
+          "label": "No"
+        },
+        {
+          "from": "n13",
+          "to": "n14"
+        },
+        {
+          "from": "n14",
+          "to": "n15",
+          "label": "Yes"
+        },
+        {
+          "from": "n14",
+          "to": "n16",
+          "label": "No"
+        },
+        {
+          "from": "n15",
+          "to": "n17"
+        },
+        {
+          "from": "n17",
+          "to": "n18",
+          "label": "Yes"
+        },
+        {
+          "from": "n17",
+          "to": "n19",
+          "label": "No"
+        },
+        {
+          "from": "n18",
+          "to": "n20"
+        },
+        {
+          "from": "n19",
+          "to": "n20"
+        },
+        {
+          "from": "n20",
+          "to": "n21",
+          "label": "Yes"
+        },
+        {
+          "from": "n20",
+          "to": "n22",
+          "label": "No"
+        },
+        {
+          "from": "n16",
+          "to": "n23"
+        },
+        {
+          "from": "n23",
+          "to": "n24",
+          "label": "Yes"
+        },
+        {
+          "from": "n23",
+          "to": "n25",
+          "label": "No"
+        },
+        {
+          "from": "n25",
+          "to": "n26"
+        },
+        {
+          "from": "n26",
+          "to": "n27",
+          "label": "Yes"
+        },
+        {
+          "from": "n26",
+          "to": "n28",
+          "label": "No"
+        },
+        {
+          "from": "n27",
+          "to": "n29"
+        },
+        {
+          "from": "n28",
+          "to": "n29"
+        },
+        {
+          "from": "n29",
+          "to": "n30",
+          "label": "Yes"
+        },
+        {
+          "from": "n29",
+          "to": "n31",
+          "label": "No"
+        },
+        {
+          "from": "n30",
+          "to": "n32"
+        },
+        {
+          "from": "n32",
+          "to": "n33",
+          "label": "Yes"
+        },
+        {
+          "from": "n32",
+          "to": "n34",
+          "label": "No"
+        },
+        {
+          "from": "n34",
+          "to": "n35"
+        },
+        {
+          "from": "n35",
+          "to": "n36",
+          "label": "Yes"
+        },
+        {
+          "from": "n35",
+          "to": "n37",
+          "label": "No"
+        },
+        {
+          "from": "n12",
+          "to": "n39"
+        },
+        {
+          "from": "n21",
+          "to": "n38"
+        },
+        {
+          "from": "n22",
+          "to": "n38"
+        },
+        {
+          "from": "n24",
+          "to": "n38"
+        },
+        {
+          "from": "n27",
+          "to": "n38"
+        },
+        {
+          "from": "n28",
+          "to": "n38"
+        },
+        {
+          "from": "n30",
+          "to": "n38"
+        },
+        {
+          "from": "n31",
+          "to": "n38"
+        },
+        {
+          "from": "n33",
+          "to": "n38"
+        },
+        {
+          "from": "n36",
+          "to": "n38"
+        },
+        {
+          "from": "n37",
+          "to": "n38"
+        },
+        {
+          "from": "n38",
+          "to": "n39"
+        }
+      ]
+    }
+  },
+  "source": "weakness_v1_from_text"
+}

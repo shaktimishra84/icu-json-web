@@ -1,0 +1,203 @@
+{
+  "chapter_file": "004_Chapter_4_Management_of_Suspected_Brain_Infection_in_the_ICU.pdf",
+  "title_guess": "004_Chapter_4_Management_of_Suspected_Brain_Infection_in_the_ICU",
+  "clinical_graph": {
+    "title": "Suspected brain infection – ICU initial approach",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Suspected brain infection – ICU initial approach"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; obtain two sets of blood cultures."
+        },
+        {
+          "id": "n3",
+          "type": "action",
+          "text": "Start empiric antibacterial therapy immediately after blood cultures (do not delay for LP/CT)."
+        },
+        {
+          "id": "n4",
+          "type": "decision",
+          "text": "If encephalitis/HSV suspected (temporal findings, seizures, CSF lymphocytes)",
+          "condition": "HSV suspected"
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Add IV acyclovir."
+        },
+        {
+          "id": "n6",
+          "type": "decision",
+          "text": "If Listeria risk (age >50, pregnant, immunocompromised, alcoholism)",
+          "condition": "Listeria risk"
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Add ampicillin (Listeria coverage)."
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "Empiric antibacterial: ceftriaxone + vancomycin (per local protocol)."
+        },
+        {
+          "id": "n9",
+          "type": "action",
+          "text": "Give dexamethasone with or just before the first antibiotic dose if pneumococcal meningitis is suspected."
+        },
+        {
+          "id": "n10",
+          "type": "decision",
+          "text": "If signs of raised ICP, focal deficit, papilledema, new-onset seizure, or immunocompromised (CT before LP indicated)",
+          "condition": "CT before LP indicated"
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "CT brain first."
+        },
+        {
+          "id": "n12",
+          "type": "decision",
+          "text": "If mass effect/obstructive hydrocephalus or focal lesion on CT",
+          "condition": "mass effect/obstructive hydrocephalus"
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "Defer LP; manage raised ICP; consult neurosurgery; continue targeted antimicrobials."
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Perform lumbar puncture now."
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "CSF: opening pressure; cell count/diff; protein; glucose; Gram stain/culture; PCR as indicated."
+        },
+        {
+          "id": "n16",
+          "type": "action",
+          "text": "Interpret CSF pattern and tailor therapy (bacterial vs viral vs TB/fungal)."
+        },
+        {
+          "id": "n17",
+          "type": "end",
+          "text": "Ongoing ICU care per etiology; reassess response and complications."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "label": null
+        },
+        {
+          "from": "n2",
+          "to": "n3",
+          "label": null
+        },
+        {
+          "from": "n3",
+          "to": "n4",
+          "label": null
+        },
+        {
+          "from": "n4",
+          "to": "n5",
+          "label": "Yes"
+        },
+        {
+          "from": "n5",
+          "to": "n6",
+          "label": null
+        },
+        {
+          "from": "n4",
+          "to": "n6",
+          "label": "No"
+        },
+        {
+          "from": "n6",
+          "to": "n7",
+          "label": "Yes"
+        },
+        {
+          "from": "n6",
+          "to": "n8",
+          "label": "No"
+        },
+        {
+          "from": "n7",
+          "to": "n8",
+          "label": null
+        },
+        {
+          "from": "n8",
+          "to": "n9",
+          "label": null
+        },
+        {
+          "from": "n9",
+          "to": "n10",
+          "label": null
+        },
+        {
+          "from": "n10",
+          "to": "n11",
+          "label": "Yes"
+        },
+        {
+          "from": "n11",
+          "to": "n12",
+          "label": null
+        },
+        {
+          "from": "n12",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n10",
+          "to": "n14",
+          "label": "No"
+        },
+        {
+          "from": "n12",
+          "to": "n14",
+          "label": "No"
+        },
+        {
+          "from": "n14",
+          "to": "n15",
+          "label": null
+        },
+        {
+          "from": "n13",
+          "to": "n16",
+          "label": null
+        },
+        {
+          "from": "n15",
+          "to": "n16",
+          "label": null
+        },
+        {
+          "from": "n16",
+          "to": "n17",
+          "label": null
+        }
+      ]
+    }
+  },
+  "source": "braininf_v1_from_text"
+}

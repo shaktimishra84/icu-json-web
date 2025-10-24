@@ -1,0 +1,333 @@
+{
+  "chapter_file": "008_Chapter_8_Management_of_Ischemic_Stroke_in_the_ICU.json",
+  "title_guess": "008_Chapter_8_Management_of_Ischemic_Stroke_in_the_ICU",
+  "clinical_graph": {
+    "title": "Acute ischemic stroke — ICU pathway",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Acute ischemic stroke — ICU pathway"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; head midline 30°; check glucose/temperature; protect airway as needed."
+        },
+        {
+          "id": "n3",
+          "type": "action",
+          "text": "Non-contrast CT brain now. Door-to-CT ≤20 min."
+        },
+        {
+          "id": "n4",
+          "type": "decision",
+          "text": "Hemorrhage on CT?",
+          "condition": "ICH on CT"
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Hemorrhage: follow ICH protocol (BP 130–150, reversal, neurosurgery/EVD as indicated)."
+        },
+        {
+          "id": "n6",
+          "type": "action",
+          "text": "Ischemic stroke pathway."
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Measure BP; review contraindications."
+        },
+        {
+          "id": "n8",
+          "type": "decision",
+          "text": "BP ≤185/110 mmHg (for IV thrombolysis)?",
+          "condition": "BP<=185/110"
+        },
+        {
+          "id": "n9",
+          "type": "action",
+          "text": "Lower BP to ≤185/110 (labetalol/nicardipine/clevidipine) if IVT candidate."
+        },
+        {
+          "id": "n10",
+          "type": "decision",
+          "text": "Last-known-well ≤4.5 h and IVT eligible?",
+          "condition": "LKW<=4.5h & eligible"
+        },
+        {
+          "id": "n11",
+          "type": "decision",
+          "text": "On DOAC/warfarin with INR > 1.7 or therapeutic heparin (contra to IVT)?",
+          "condition": "anticoag present/INR high"
+        },
+        {
+          "id": "n12",
+          "type": "action",
+          "text": "IV thrombolysis (if eligible): alteplase 0.9 mg/kg (10% bolus, rest over 60 min; max 90 mg) or tenecteplase 0.25 mg/kg IV bolus (max 25 mg). Door-to-needle ≤60 min."
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "No IVT due to anticoag/contraindication; proceed to EVT/medical path."
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "CTA ± perfusion (or MRA/CTP) to assess for large-vessel occlusion (LVO)."
+        },
+        {
+          "id": "n16",
+          "type": "decision",
+          "text": "LVO present?",
+          "condition": "LVO on CTA/MRA"
+        },
+        {
+          "id": "n17",
+          "type": "decision",
+          "text": "EVT window ≤24 h and imaging/clinical criteria met (e.g., DAWN/DEFUSE 3; NIHSS ≥6; ASPECTS ≥6; mRS 0–1)?",
+          "condition": "EVT<=24h & criteria"
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "Endovascular thrombectomy. Door-to-groin ≤90 min (where feasible)."
+        },
+        {
+          "id": "n19",
+          "type": "action",
+          "text": "Not EVT candidate; best medical therapy."
+        },
+        {
+          "id": "n20",
+          "type": "action",
+          "text": "No LVO: best medical therapy."
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "After IVT/EVT: target BP <180/105 for 24 h; monitor for hemorrhagic transformation."
+        },
+        {
+          "id": "n22",
+          "type": "action",
+          "text": "If no IVT/EVT: permissive hypertension up to ~220/120 unless compelling reason to treat."
+        },
+        {
+          "id": "n23",
+          "type": "action",
+          "text": "Antiplatelet: aspirin once hemorrhage excluded and outside IVT timing; DAPT 21 days for minor stroke/TIA if appropriate."
+        },
+        {
+          "id": "n24",
+          "type": "action",
+          "text": "High-intensity statin (unless contraindicated)."
+        },
+        {
+          "id": "n25",
+          "type": "decision",
+          "text": "Malignant MCA infarct with mass effect (within ~48 h; appropriate candidate)?",
+          "condition": "malignant MCA candidate"
+        },
+        {
+          "id": "n26",
+          "type": "action",
+          "text": "Decompressive hemicraniectomy after discussion with family/stroke/neurosurgery teams."
+        },
+        {
+          "id": "n27",
+          "type": "action",
+          "text": "No surgical decompression; continue ICU care and secondary prevention."
+        },
+        {
+          "id": "n28",
+          "type": "action",
+          "text": "Swallow screen; prevent aspiration; DVT prophylaxis; glucose 140–180 mg/dL; maintain normothermia."
+        },
+        {
+          "id": "n29",
+          "type": "action",
+          "text": "Identify stroke mechanism (AF, carotid disease, cardioembolism) and start targeted secondary prevention."
+        },
+        {
+          "id": "n30",
+          "type": "action",
+          "text": "Posterior circulation: consider EVT up to ~12 h for basilar occlusion per criteria."
+        },
+        {
+          "id": "n31",
+          "type": "end",
+          "text": "Admit/continue in stroke unit/ICU; rehab planning and follow-up."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4"
+        },
+        {
+          "from": "n4",
+          "to": "n5",
+          "label": "Yes"
+        },
+        {
+          "from": "n4",
+          "to": "n6",
+          "label": "No"
+        },
+        {
+          "from": "n6",
+          "to": "n7"
+        },
+        {
+          "from": "n7",
+          "to": "n8"
+        },
+        {
+          "from": "n8",
+          "to": "n9",
+          "label": "No"
+        },
+        {
+          "from": "n8",
+          "to": "n10",
+          "label": "Yes"
+        },
+        {
+          "from": "n9",
+          "to": "n10"
+        },
+        {
+          "from": "n10",
+          "to": "n11",
+          "label": "Yes"
+        },
+        {
+          "from": "n10",
+          "to": "n15",
+          "label": "No"
+        },
+        {
+          "from": "n11",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n11",
+          "to": "n12",
+          "label": "No"
+        },
+        {
+          "from": "n12",
+          "to": "n15"
+        },
+        {
+          "from": "n13",
+          "to": "n15"
+        },
+        {
+          "from": "n15",
+          "to": "n16"
+        },
+        {
+          "from": "n16",
+          "to": "n17",
+          "label": "Yes"
+        },
+        {
+          "from": "n17",
+          "to": "n18",
+          "label": "Yes"
+        },
+        {
+          "from": "n17",
+          "to": "n19",
+          "label": "No"
+        },
+        {
+          "from": "n16",
+          "to": "n20",
+          "label": "No"
+        },
+        {
+          "from": "n12",
+          "to": "n21"
+        },
+        {
+          "from": "n18",
+          "to": "n21"
+        },
+        {
+          "from": "n20",
+          "to": "n22"
+        },
+        {
+          "from": "n19",
+          "to": "n22"
+        },
+        {
+          "from": "n22",
+          "to": "n23"
+        },
+        {
+          "from": "n21",
+          "to": "n23"
+        },
+        {
+          "from": "n23",
+          "to": "n24"
+        },
+        {
+          "from": "n24",
+          "to": "n25"
+        },
+        {
+          "from": "n25",
+          "to": "n26",
+          "label": "Yes"
+        },
+        {
+          "from": "n25",
+          "to": "n27",
+          "label": "No"
+        },
+        {
+          "from": "n26",
+          "to": "n28"
+        },
+        {
+          "from": "n27",
+          "to": "n28"
+        },
+        {
+          "from": "n28",
+          "to": "n29"
+        },
+        {
+          "from": "n29",
+          "to": "n30"
+        },
+        {
+          "from": "n30",
+          "to": "n31"
+        },
+        {
+          "from": "n5",
+          "to": "n31"
+        }
+      ]
+    }
+  },
+  "source": "ais_v1_from_text"
+}

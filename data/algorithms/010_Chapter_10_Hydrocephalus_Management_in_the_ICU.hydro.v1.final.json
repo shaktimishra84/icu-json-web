@@ -1,0 +1,314 @@
+{
+  "chapter_file": "010_Chapter_10_Hydrocephalus_Management_in_the_ICU.json",
+  "title_guess": "010_Chapter_10_Hydrocephalus_Management_in_the_ICU",
+  "clinical_graph": {
+    "title": "Hydrocephalus — ICU pathway",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Hydrocephalus — ICU pathway"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; head up 30°; analgesia/sedation; avoid BP/ICP surges."
+        },
+        {
+          "id": "n3",
+          "type": "action",
+          "text": "Urgent CT/MRI: confirm ventriculomegaly; define communicating vs obstructive; assess etiology (SAH/TBI/tumor/infection)."
+        },
+        {
+          "id": "n4",
+          "type": "decision",
+          "text": "Depressed consciousness or acute neurological decline with hydrocephalus?",
+          "condition": "acute decline"
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Place EVD for CSF diversion and ICP monitoring; set drainage per protocol; sterile handling."
+        },
+        {
+          "id": "n6",
+          "type": "action",
+          "text": "No emergent diversion; proceed with evaluation and monitoring."
+        },
+        {
+          "id": "n7",
+          "type": "decision",
+          "text": "Obstructive (non-communicating) hydrocephalus on imaging?",
+          "condition": "obstructive on imaging"
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "Treat cause (mass/stenosis/IVH). Maintain EVD; consider endoscopic third ventriculostomy (ETV) if suitable."
+        },
+        {
+          "id": "n9",
+          "type": "action",
+          "text": "Communicating hydrocephalus: manage etiology (e.g., aSAH, meningitis); consider CSF diversion if ICP rises."
+        },
+        {
+          "id": "n10",
+          "type": "decision",
+          "text": "iNPH suspected (gait disturbance ± cognitive/urinary; DESH/Evans index ≥0.3)?",
+          "condition": "iNPH suspected"
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "Perform CSF tap test and/or infusion study (outflow resistance/compliance)."
+        },
+        {
+          "id": "n12",
+          "type": "action",
+          "text": "Not iNPH: continue cause-directed management and monitoring."
+        },
+        {
+          "id": "n13",
+          "type": "decision",
+          "text": "Objective improvement or high outflow resistance on testing?",
+          "condition": "tap test positive or high resistance"
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Offer ventriculoperitoneal (VP) shunt with programmable valve ± anti-siphon/gravitational unit; plan follow-up adjustments."
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "No clear benefit: conservative strategy; reassess and optimize rehab/medical factors."
+        },
+        {
+          "id": "n16",
+          "type": "action",
+          "text": "Medical ICP bundle: euvolemia; optimize CPP; osmotherapy (mannitol/hypertonic saline) as indicated; PaCO₂ 35–40 mmHg; sedation/analgesia."
+        },
+        {
+          "id": "n17",
+          "type": "decision",
+          "text": "ICP persistently elevated despite medical bundle?",
+          "condition": "ICP high despite meds"
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "Escalate CSF diversion (optimize EVD; consider definitive shunt if indicated)."
+        },
+        {
+          "id": "n19",
+          "type": "action",
+          "text": "ICP acceptable; continue monitoring and cause-directed therapy."
+        },
+        {
+          "id": "n20",
+          "type": "decision",
+          "text": "On anticoagulant/antiplatelet requiring reversal?",
+          "condition": "antithrombotic use"
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "Reverse per agent (idarucizumab/andexanet/4F-PCC; vitamin K for warfarin) per protocol."
+        },
+        {
+          "id": "n22",
+          "type": "action",
+          "text": "No reversal needed."
+        },
+        {
+          "id": "n23",
+          "type": "decision",
+          "text": "Device complications (infection, obstruction, overdrainage)?",
+          "condition": "device complication"
+        },
+        {
+          "id": "n24",
+          "type": "action",
+          "text": "Treat per issue: antibiotics and externalization for infection; revise/flush for obstruction; adjust valve/add anti-siphon for overdrainage."
+        },
+        {
+          "id": "n25",
+          "type": "action",
+          "text": "No device complication; continue routine care."
+        },
+        {
+          "id": "n26",
+          "type": "action",
+          "text": "Serial neuroimaging; clinical tracking (gait/cognition/urinary); adjust programmable valve settings as needed."
+        },
+        {
+          "id": "n27",
+          "type": "end",
+          "text": "Ongoing ICU care; rehab planning; long-term follow-up."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4"
+        },
+        {
+          "from": "n4",
+          "to": "n5",
+          "label": "Yes"
+        },
+        {
+          "from": "n4",
+          "to": "n6",
+          "label": "No"
+        },
+        {
+          "from": "n5",
+          "to": "n7"
+        },
+        {
+          "from": "n6",
+          "to": "n7"
+        },
+        {
+          "from": "n7",
+          "to": "n8",
+          "label": "Yes"
+        },
+        {
+          "from": "n7",
+          "to": "n9",
+          "label": "No"
+        },
+        {
+          "from": "n9",
+          "to": "n10"
+        },
+        {
+          "from": "n10",
+          "to": "n11",
+          "label": "Yes"
+        },
+        {
+          "from": "n10",
+          "to": "n12",
+          "label": "No"
+        },
+        {
+          "from": "n11",
+          "to": "n13"
+        },
+        {
+          "from": "n13",
+          "to": "n14",
+          "label": "Yes"
+        },
+        {
+          "from": "n13",
+          "to": "n15",
+          "label": "No"
+        },
+        {
+          "from": "n8",
+          "to": "n16"
+        },
+        {
+          "from": "n12",
+          "to": "n16"
+        },
+        {
+          "from": "n15",
+          "to": "n16"
+        },
+        {
+          "from": "n16",
+          "to": "n17"
+        },
+        {
+          "from": "n17",
+          "to": "n18",
+          "label": "Yes"
+        },
+        {
+          "from": "n17",
+          "to": "n19",
+          "label": "No"
+        },
+        {
+          "from": "n5",
+          "to": "n20"
+        },
+        {
+          "from": "n8",
+          "to": "n20"
+        },
+        {
+          "from": "n9",
+          "to": "n20"
+        },
+        {
+          "from": "n20",
+          "to": "n21",
+          "label": "Yes"
+        },
+        {
+          "from": "n20",
+          "to": "n22",
+          "label": "No"
+        },
+        {
+          "from": "n21",
+          "to": "n23"
+        },
+        {
+          "from": "n22",
+          "to": "n23"
+        },
+        {
+          "from": "n18",
+          "to": "n23"
+        },
+        {
+          "from": "n23",
+          "to": "n24",
+          "label": "Yes"
+        },
+        {
+          "from": "n23",
+          "to": "n25",
+          "label": "No"
+        },
+        {
+          "from": "n14",
+          "to": "n26"
+        },
+        {
+          "from": "n24",
+          "to": "n26"
+        },
+        {
+          "from": "n25",
+          "to": "n26"
+        },
+        {
+          "from": "n19",
+          "to": "n26"
+        },
+        {
+          "from": "n26",
+          "to": "n27"
+        }
+      ]
+    }
+  },
+  "source": "hydro_v1_from_text"
+}

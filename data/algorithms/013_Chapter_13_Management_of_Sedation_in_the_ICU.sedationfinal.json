@@ -1,0 +1,302 @@
+{
+  "chapter_file": "013_Chapter_13_Management_of_Sedation_in_the_ICU.json",
+  "title_guess": "013_Chapter_13_Management_of_Sedation_in_the_ICU",
+  "clinical_graph": {
+    "title": "Management of sedation in the ICU — practical pathway",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "ICU sedation management"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Pain-first: assess BPS/CPOT; give analgesia. Optimize oxygenation/ventilation/hemodynamics; correct reversible agitation causes (hypoxia, hypercapnia, hypoglycemia, urinary retention, withdrawal, sepsis)."
+        },
+        {
+          "id": "n3",
+          "type": "decision",
+          "text": "Plan for extubation today (coordinate SAT with SBT)?",
+          "condition": "extubation plan today"
+        },
+        {
+          "id": "n4",
+          "type": "action",
+          "text": "Stop/reduce sedatives for SAT; prepare SBT if criteria met; close monitoring."
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "No immediate extubation plan; continue goal-directed sedation."
+        },
+        {
+          "id": "n6",
+          "type": "decision",
+          "text": "Tolerates SAT without dangerous agitation or respiratory failure?",
+          "condition": "SAT tolerated"
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Proceed with SBT and wean sedation; if successful, extubate and use minimal/no sedatives."
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "Restart at lower dose; treat triggers; target light sedation."
+        },
+        {
+          "id": "n9",
+          "type": "decision",
+          "text": "Deep sedation required (e.g., severe ARDS, refractory ICP, status epilepticus, NMB)?",
+          "condition": "deep sedation indication"
+        },
+        {
+          "id": "n10",
+          "type": "action",
+          "text": "Deep sedation pathway."
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "Light sedation pathway."
+        },
+        {
+          "id": "n12",
+          "type": "decision",
+          "text": "Contraindication to dexmedetomidine (significant bradycardia/high-grade AV block)?",
+          "condition": "dex contra"
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "Use low-dose propofol infusion (add opioid analgesia); avoid oversedation; monitor TGs if prolonged."
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Dexmedetomidine infusion for light, arousable sedation; watch for bradycardia/hypotension."
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "Propofol-based deep sedation with opioid analgesia; daily TG check if high dose/prolonged. Be vigilant for propofol infusion syndrome; monitor CK and lactate."
+        },
+        {
+          "id": "n16",
+          "type": "decision",
+          "text": "Hemodynamic instability or marked hypertriglyceridemia?",
+          "condition": "propofol risk"
+        },
+        {
+          "id": "n17",
+          "type": "action",
+          "text": "Prefer midazolam infusion; titrate to goal; minimize duration to reduce delirium/accumulation."
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "Continue propofol; avoid excessive depth; reassess frequently."
+        },
+        {
+          "id": "n19",
+          "type": "decision",
+          "text": "Neuromuscular blockade ongoing?",
+          "condition": "NMB active"
+        },
+        {
+          "id": "n20",
+          "type": "action",
+          "text": "Ensure deep analgesia and sedation; consider processed EEG if needed; monitor train-of-four."
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "No NMB; continue standard monitoring."
+        },
+        {
+          "id": "n22",
+          "type": "action",
+          "text": "Set and document target sedation: RASS −1 to −2 for most; deeper only if clearly indicated. Reassess RASS/SAS q2–4 h and after dose changes. Avoid routine benzodiazepines; reserve midazolam for instability or procedures. Document the RASS target in orders."
+        },
+        {
+          "id": "n23",
+          "type": "action",
+          "text": "Daily sedation interruption when safe; coordinate with SBT; restart at lower dose if needed."
+        },
+        {
+          "id": "n24",
+          "type": "decision",
+          "text": "Delirium suspected/confirmed (e.g., CAM-ICU positive)?",
+          "condition": "delirium present"
+        },
+        {
+          "id": "n25",
+          "type": "action",
+          "text": "Nonpharmacologic bundle: reorientation, sleep hygiene, early mobilization, glasses/hearing aids; minimize benzos/anticholinergics; consider short-course antipsychotic only for severe distress/safety (monitor QTc)."
+        },
+        {
+          "id": "n26",
+          "type": "action",
+          "text": "No delirium; continue current plan and prevention bundle."
+        },
+        {
+          "id": "n27",
+          "type": "end",
+          "text": "Stable, goal-directed sedation with regular reassessment, SAT/SBT coordination, and delirium prevention."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4",
+          "label": "Yes"
+        },
+        {
+          "from": "n3",
+          "to": "n5",
+          "label": "No"
+        },
+        {
+          "from": "n4",
+          "to": "n6"
+        },
+        {
+          "from": "n6",
+          "to": "n7",
+          "label": "Yes"
+        },
+        {
+          "from": "n6",
+          "to": "n8",
+          "label": "No"
+        },
+        {
+          "from": "n5",
+          "to": "n9"
+        },
+        {
+          "from": "n8",
+          "to": "n9"
+        },
+        {
+          "from": "n9",
+          "to": "n10",
+          "label": "Yes"
+        },
+        {
+          "from": "n9",
+          "to": "n11",
+          "label": "No"
+        },
+        {
+          "from": "n11",
+          "to": "n12"
+        },
+        {
+          "from": "n12",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n12",
+          "to": "n14",
+          "label": "No"
+        },
+        {
+          "from": "n10",
+          "to": "n15"
+        },
+        {
+          "from": "n15",
+          "to": "n16"
+        },
+        {
+          "from": "n16",
+          "to": "n17",
+          "label": "Yes"
+        },
+        {
+          "from": "n16",
+          "to": "n18",
+          "label": "No"
+        },
+        {
+          "from": "n17",
+          "to": "n19"
+        },
+        {
+          "from": "n18",
+          "to": "n19"
+        },
+        {
+          "from": "n19",
+          "to": "n20",
+          "label": "Yes"
+        },
+        {
+          "from": "n19",
+          "to": "n21",
+          "label": "No"
+        },
+        {
+          "from": "n13",
+          "to": "n22"
+        },
+        {
+          "from": "n14",
+          "to": "n22"
+        },
+        {
+          "from": "n20",
+          "to": "n22"
+        },
+        {
+          "from": "n21",
+          "to": "n22"
+        },
+        {
+          "from": "n22",
+          "to": "n23"
+        },
+        {
+          "from": "n23",
+          "to": "n24"
+        },
+        {
+          "from": "n24",
+          "to": "n25",
+          "label": "Yes"
+        },
+        {
+          "from": "n24",
+          "to": "n26",
+          "label": "No"
+        },
+        {
+          "from": "n7",
+          "to": "n27"
+        },
+        {
+          "from": "n25",
+          "to": "n27"
+        },
+        {
+          "from": "n26",
+          "to": "n27"
+        }
+      ]
+    }
+  },
+  "source": "sedation_v1_from_text"
+}

@@ -1,0 +1,320 @@
+{
+  "chapter_file": "011_Chapter_11_Management_of_Brain_Abscess_and_Metastases_in_the_ICU.json",
+  "title_guess": "011_Chapter_11_Management_of_Brain_Abscess_and_Metastases_in_the_ICU",
+  "clinical_graph": {
+    "title": "Brain abscess and brain metastases — ICU pathway",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Brain abscess & brain metastases — ICU management"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; head up 30°; analgesia/antiemetics; avoid surges in ICP/BP; check glucose/temp."
+        },
+        {
+          "id": "n3",
+          "type": "action",
+          "text": "MRI brain with contrast + DWI/ADC preferred. If unavailable, do contrast CT."
+        },
+        {
+          "id": "n4",
+          "type": "decision",
+          "text": "Restricted diffusion on DWI consistent with abscess?",
+          "condition": "DWI restricted"
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Probable brain abscess."
+        },
+        {
+          "id": "n6",
+          "type": "decision",
+          "text": "Severe disease/mass effect or neurological decline?",
+          "condition": "severe/mass effect"
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Urgent surgical aspiration/excision; send pus for culture/Gram/AFB/fungal."
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "No immediate surgery: plan aspiration soon; avoid delaying samples if stable."
+        },
+        {
+          "id": "n9",
+          "type": "decision",
+          "text": "Post-neurosurgical/healthcare-associated setting?",
+          "condition": "post-neurosurgical/HCA"
+        },
+        {
+          "id": "n10",
+          "type": "action",
+          "text": "Community-acquired: ceftriaxone + metronidazole (cover streptococci/anaerobes)."
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "Post-neurosurgical: meropenem + vancomycin or linezolid (cover GNB + MRSA)."
+        },
+        {
+          "id": "n12",
+          "type": "decision",
+          "text": "Complete excision achieved?",
+          "condition": "complete excision"
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "IV antibiotics ~4 weeks after complete excision (adjust to culture)."
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Partial/no surgery: IV antibiotics 6–8 weeks (culture-directed)."
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "Abscess: do not use routine AED prophylaxis; treat seizures if they occur."
+        },
+        {
+          "id": "n16",
+          "type": "action",
+          "text": "ICP bundle as needed: head elevation, osmotherapy, controlled ventilation."
+        },
+        {
+          "id": "n17",
+          "type": "action",
+          "text": "Follow-up MRI to assess response; plan outpatient follow-up and rehab."
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "Probable brain metastasis."
+        },
+        {
+          "id": "n19",
+          "type": "decision",
+          "text": "Significant mass effect or symptoms needing steroids?",
+          "condition": "mass effect"
+        },
+        {
+          "id": "n20",
+          "type": "action",
+          "text": "Give dexamethasone to reduce edema; taper with clinical improvement."
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "No steroids needed now; reassess frequently."
+        },
+        {
+          "id": "n22",
+          "type": "decision",
+          "text": "Single accessible lesion and controlled systemic disease?",
+          "condition": "single accessible & controlled systemic"
+        },
+        {
+          "id": "n23",
+          "type": "action",
+          "text": "Surgical resection (preferred for solitary accessible lesion)."
+        },
+        {
+          "id": "n24",
+          "type": "decision",
+          "text": "Few lesions in eloquent areas suitable for SRS?",
+          "condition": "SRS candidate"
+        },
+        {
+          "id": "n25",
+          "type": "action",
+          "text": "Stereotactic radiosurgery (SRS)."
+        },
+        {
+          "id": "n26",
+          "type": "action",
+          "text": "Whole-brain radiotherapy (WBRT) or systemic therapy per oncology."
+        },
+        {
+          "id": "n27",
+          "type": "action",
+          "text": "Metastases: consider AED prophylaxis when cortical involvement/high risk; individualize."
+        },
+        {
+          "id": "n28",
+          "type": "action",
+          "text": "Imaging surveillance per EANO-ESMO; schedule multidisciplinary follow-up."
+        },
+        {
+          "id": "n29",
+          "type": "end",
+          "text": "Ongoing ICU care; prevent complications; coordinated outpatient follow-up/rehab."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4"
+        },
+        {
+          "from": "n4",
+          "to": "n5",
+          "label": "Yes"
+        },
+        {
+          "from": "n5",
+          "to": "n6"
+        },
+        {
+          "from": "n6",
+          "to": "n7",
+          "label": "Yes"
+        },
+        {
+          "from": "n6",
+          "to": "n8",
+          "label": "No"
+        },
+        {
+          "from": "n7",
+          "to": "n9"
+        },
+        {
+          "from": "n8",
+          "to": "n9"
+        },
+        {
+          "from": "n9",
+          "to": "n10",
+          "label": "No"
+        },
+        {
+          "from": "n9",
+          "to": "n11",
+          "label": "Yes"
+        },
+        {
+          "from": "n10",
+          "to": "n12"
+        },
+        {
+          "from": "n11",
+          "to": "n12"
+        },
+        {
+          "from": "n12",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n12",
+          "to": "n14",
+          "label": "No"
+        },
+        {
+          "from": "n13",
+          "to": "n15"
+        },
+        {
+          "from": "n14",
+          "to": "n15"
+        },
+        {
+          "from": "n15",
+          "to": "n16"
+        },
+        {
+          "from": "n16",
+          "to": "n17"
+        },
+        {
+          "from": "n4",
+          "to": "n18",
+          "label": "No"
+        },
+        {
+          "from": "n18",
+          "to": "n19"
+        },
+        {
+          "from": "n19",
+          "to": "n20",
+          "label": "Yes"
+        },
+        {
+          "from": "n19",
+          "to": "n21",
+          "label": "No"
+        },
+        {
+          "from": "n20",
+          "to": "n22"
+        },
+        {
+          "from": "n21",
+          "to": "n22"
+        },
+        {
+          "from": "n22",
+          "to": "n23",
+          "label": "Yes"
+        },
+        {
+          "from": "n22",
+          "to": "n24",
+          "label": "No"
+        },
+        {
+          "from": "n24",
+          "to": "n25",
+          "label": "Yes"
+        },
+        {
+          "from": "n24",
+          "to": "n26",
+          "label": "No"
+        },
+        {
+          "from": "n23",
+          "to": "n27"
+        },
+        {
+          "from": "n25",
+          "to": "n27"
+        },
+        {
+          "from": "n26",
+          "to": "n27"
+        },
+        {
+          "from": "n27",
+          "to": "n28"
+        },
+        {
+          "from": "n17",
+          "to": "n29"
+        },
+        {
+          "from": "n28",
+          "to": "n29"
+        }
+      ]
+    }
+  },
+  "source": "abscess_mets_v1_from_text"
+}

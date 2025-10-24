@@ -1,0 +1,380 @@
+{
+  "chapter_file": "007_Chapter_7_Management_of_Intracerebral_Hemorrhage_ICH_in_the_ICU.json",
+  "title_guess": "007_Chapter_7_Management_of_Intracerebral_Hemorrhage_ICH_in_the_ICU",
+  "clinical_graph": {
+    "title": "Intracerebral hemorrhage (ICH) – ICU protocol",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Intracerebral hemorrhage (ICH) – ICU protocol"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; head up 30°; analgesia/sedation; early neurosurgery consult. Maintain glucose 140–180 mg/dL; maintain normothermia."
+        },
+        {
+          "id": "n3",
+          "type": "decision",
+          "text": "Trauma mechanism present (suspected tICH)?",
+          "condition": "traumatic ICH suspected"
+        },
+        {
+          "id": "n4",
+          "type": "action",
+          "text": "Manage per traumatic brain injury protocol (repeat CT per TBI pathway)."
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Proceed on spontaneous ICH pathway."
+        },
+        {
+          "id": "n6",
+          "type": "decision",
+          "text": "SBP > 150 mmHg (target 130–150; avoid rapid drops)?",
+          "condition": "SBP>150"
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Start IV nicardipine/clevidipine/labetalol; titrate to SBP 130–150 mmHg."
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "BP acceptable; continue."
+        },
+        {
+          "id": "n9",
+          "type": "decision",
+          "text": "On anticoagulant/antiplatelet?",
+          "condition": "antithrombotic use"
+        },
+        {
+          "id": "n10",
+          "type": "decision",
+          "text": "Dabigatran within ~48 h?",
+          "condition": "dabigatran recent"
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "Give idarucizumab 5 g IV."
+        },
+        {
+          "id": "n12",
+          "type": "decision",
+          "text": "Apixaban/rivaroxaban/edoxaban within ~24 h?",
+          "condition": "factor Xa recent"
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "Andexanet alfa per label; if unavailable, 4F-PCC 50 U/kg."
+        },
+        {
+          "id": "n14",
+          "type": "decision",
+          "text": "Warfarin with elevated INR?",
+          "condition": "warfarin INR high"
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "4F-PCC (weight/INR-based) + IV vitamin K 10 mg."
+        },
+        {
+          "id": "n16",
+          "type": "decision",
+          "text": "Significant antiplatelet effect or urgent procedure planned?",
+          "condition": "antiplatelet significant"
+        },
+        {
+          "id": "n17",
+          "type": "action",
+          "text": "Desmopressin 0.3 mcg/kg IV; consider platelets if procedure/planned surgery."
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "No antithrombotic to reverse; proceed."
+        },
+        {
+          "id": "n19",
+          "type": "action",
+          "text": "After reversal (as applicable), continue ICH care."
+        },
+        {
+          "id": "n20",
+          "type": "decision",
+          "text": "Cerebellar hematoma >15 mL or deterioration/brainstem compression?",
+          "condition": "cerebellar large/deterioration"
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "Urgent neurosurgical decompression/evacuation."
+        },
+        {
+          "id": "n22",
+          "type": "action",
+          "text": "No posterior fossa surgical indication; continue."
+        },
+        {
+          "id": "n23",
+          "type": "decision",
+          "text": "IVH with hydrocephalus/low consciousness?",
+          "condition": "IVH + hydrocephalus/low GCS"
+        },
+        {
+          "id": "n24",
+          "type": "action",
+          "text": "External ventricular drain (EVD)."
+        },
+        {
+          "id": "n25",
+          "type": "action",
+          "text": "No EVD indication; continue."
+        },
+        {
+          "id": "n26",
+          "type": "decision",
+          "text": "Raised ICP or herniation risk?",
+          "condition": "raised ICP/herniation risk"
+        },
+        {
+          "id": "n27",
+          "type": "action",
+          "text": "ICP bundle: head-up; analgesia/sedation; PaCO₂ 35–40 mmHg; hyperosmolar therapy; maintain CPP 60–70. No routine seizure prophylaxis; treat seizures if present."
+        },
+        {
+          "id": "n28",
+          "type": "action",
+          "text": "ICP acceptable; continue."
+        },
+        {
+          "id": "n29",
+          "type": "action",
+          "text": "Repeat CT at 6 h and 24 h, with any deterioration."
+        },
+        {
+          "id": "n30",
+          "type": "decision",
+          "text": "Stable CT at 24–48 h, no procedures planned (ok to start pharmacologic VTE prophylaxis)?",
+          "condition": "stable CT 24–48h"
+        },
+        {
+          "id": "n31",
+          "type": "action",
+          "text": "Start LMWH/UFH per protocol; continue IPC devices."
+        },
+        {
+          "id": "n32",
+          "type": "action",
+          "text": "IPC devices only; re-evaluate after next CT."
+        },
+        {
+          "id": "n33",
+          "type": "end",
+          "text": "Ongoing ICU care; prevent complications; plan rehab and follow-up."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4",
+          "label": "Yes"
+        },
+        {
+          "from": "n3",
+          "to": "n5",
+          "label": "No"
+        },
+        {
+          "from": "n5",
+          "to": "n6"
+        },
+        {
+          "from": "n6",
+          "to": "n7",
+          "label": "Yes"
+        },
+        {
+          "from": "n6",
+          "to": "n8",
+          "label": "No"
+        },
+        {
+          "from": "n7",
+          "to": "n9"
+        },
+        {
+          "from": "n8",
+          "to": "n9"
+        },
+        {
+          "from": "n9",
+          "to": "n10",
+          "label": "Yes"
+        },
+        {
+          "from": "n10",
+          "to": "n11",
+          "label": "Yes"
+        },
+        {
+          "from": "n10",
+          "to": "n12",
+          "label": "No"
+        },
+        {
+          "from": "n12",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n12",
+          "to": "n14",
+          "label": "No"
+        },
+        {
+          "from": "n14",
+          "to": "n15",
+          "label": "Yes"
+        },
+        {
+          "from": "n14",
+          "to": "n16",
+          "label": "No"
+        },
+        {
+          "from": "n16",
+          "to": "n17",
+          "label": "Yes"
+        },
+        {
+          "from": "n9",
+          "to": "n18",
+          "label": "No"
+        },
+        {
+          "from": "n11",
+          "to": "n19"
+        },
+        {
+          "from": "n13",
+          "to": "n19"
+        },
+        {
+          "from": "n15",
+          "to": "n19"
+        },
+        {
+          "from": "n17",
+          "to": "n19"
+        },
+        {
+          "from": "n18",
+          "to": "n19"
+        },
+        {
+          "from": "n19",
+          "to": "n20"
+        },
+        {
+          "from": "n20",
+          "to": "n21",
+          "label": "Yes"
+        },
+        {
+          "from": "n20",
+          "to": "n22",
+          "label": "No"
+        },
+        {
+          "from": "n22",
+          "to": "n23"
+        },
+        {
+          "from": "n23",
+          "to": "n24",
+          "label": "Yes"
+        },
+        {
+          "from": "n23",
+          "to": "n25",
+          "label": "No"
+        },
+        {
+          "from": "n24",
+          "to": "n26"
+        },
+        {
+          "from": "n25",
+          "to": "n26"
+        },
+        {
+          "from": "n26",
+          "to": "n27",
+          "label": "Yes"
+        },
+        {
+          "from": "n26",
+          "to": "n28",
+          "label": "No"
+        },
+        {
+          "from": "n27",
+          "to": "n29"
+        },
+        {
+          "from": "n28",
+          "to": "n29"
+        },
+        {
+          "from": "n29",
+          "to": "n30"
+        },
+        {
+          "from": "n30",
+          "to": "n31",
+          "label": "Yes"
+        },
+        {
+          "from": "n30",
+          "to": "n32",
+          "label": "No"
+        },
+        {
+          "from": "n4",
+          "to": "n33"
+        },
+        {
+          "from": "n31",
+          "to": "n33"
+        },
+        {
+          "from": "n32",
+          "to": "n33"
+        },
+        {
+          "from": "n16",
+          "to": "n19",
+          "label": "No"
+        }
+      ]
+    }
+  },
+  "source": "ich_v1_from_text"
+}

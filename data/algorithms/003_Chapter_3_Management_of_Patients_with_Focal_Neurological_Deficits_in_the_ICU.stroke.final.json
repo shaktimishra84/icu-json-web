@@ -1,0 +1,315 @@
+{
+  "chapter_file": "003_Chapter_3_Management_of_Patients_with_Focal_Neurological_Deficits_in_the_ICU.json",
+  "title_guess": "003_Chapter_3_Management_of_Patients_with_Focal_Neurological_Deficits_in_the_ICU",
+  "clinical_graph": {
+    "title": "Focal neurological deficit – ICU stroke pathway",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Focal neurological deficit – ICU stroke pathway"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; check glucose and temperature; head midline 30°; protect airway as needed."
+        },
+        {
+          "id": "n3",
+          "type": "decision",
+          "text": "If glucose < 70 mg/dL",
+          "condition": "glucose<70 mg/dL"
+        },
+        {
+          "id": "n4",
+          "type": "action",
+          "text": "Give IV dextrose (add thiamine if deficiency risk); recheck in 5–10 min."
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "If euglycemic, proceed immediately."
+        },
+        {
+          "id": "n6",
+          "type": "action",
+          "text": "Non-contrast CT brain now (door-to-CT as fast as possible). Door-to-CT ≤20 min."
+        },
+        {
+          "id": "n7",
+          "type": "decision",
+          "text": "Hemorrhage on CT?",
+          "condition": "ICH on CT"
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "Intracerebral hemorrhage: follow ICH protocol (BP target 130–150, reversal as indicated, neurosurgery/EVD criteria)."
+        },
+        {
+          "id": "n9",
+          "type": "action",
+          "text": "Ischemic stroke pathway."
+        },
+        {
+          "id": "n10",
+          "type": "action",
+          "text": "Measure BP and review contraindications."
+        },
+        {
+          "id": "n11",
+          "type": "decision",
+          "text": "BP ≤185/110 mmHg (for IVT)?",
+          "condition": "BP<=185/110"
+        },
+        {
+          "id": "n12",
+          "type": "action",
+          "text": "Lower BP to ≤185/110 (labetalol/nicardipine/clevidipine) if IVT candidate."
+        },
+        {
+          "id": "n13",
+          "type": "decision",
+          "text": "Last-known-well ≤4.5 h and IVT eligible?",
+          "condition": "LKW<=4.5h & eligible"
+        },
+        {
+          "id": "n14",
+          "type": "decision",
+          "text": "On DOAC/warfarin with high INR (contra to IVT)?",
+          "condition": "anticoag present/INR high"
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "IV thrombolysis: alteplase/tenecteplase per protocol (if eligible). Door-to-needle ≤60 min."
+        },
+        {
+          "id": "n16",
+          "type": "action",
+          "text": "No IVT (anticoagulation/contraindication)."
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "CTA/vascular imaging (± CTP/MR perfusion) to assess for large-vessel occlusion (LVO)."
+        },
+        {
+          "id": "n19",
+          "type": "decision",
+          "text": "LVO present?",
+          "condition": "LVO on CTA/MRA"
+        },
+        {
+          "id": "n20",
+          "type": "decision",
+          "text": "EVT window ≤24 h and imaging criteria met?",
+          "condition": "EVT<=24h & criteria"
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "Endovascular thrombectomy per criteria (DAWN/DEFUSE 3 principles)."
+        },
+        {
+          "id": "n22",
+          "type": "action",
+          "text": "Not EVT candidate; continue best medical therapy."
+        },
+        {
+          "id": "n23",
+          "type": "action",
+          "text": "No LVO: best medical therapy."
+        },
+        {
+          "id": "n24",
+          "type": "action",
+          "text": "If no IVT/EVT: permissive hypertension up to ~220/120 (unless compelling reason)."
+        },
+        {
+          "id": "n25",
+          "type": "action",
+          "text": "If IVT/EVT given: target BP per protocol (e.g., <180/105)."
+        },
+        {
+          "id": "n26",
+          "type": "action",
+          "text": "Start antiplatelet (e.g., aspirin) once imaging excludes hemorrhage and outside IVT window/timing."
+        },
+        {
+          "id": "n27",
+          "type": "action",
+          "text": "Swallow screen; prevent aspiration; DVT prophylaxis; glucose 140–180 mg/dL; normothermia."
+        },
+        {
+          "id": "n28",
+          "type": "action",
+          "text": "Identify etiology (AFib, carotid stenosis, cardioembolism); start secondary prevention."
+        },
+        {
+          "id": "n29",
+          "type": "end",
+          "text": "Admit to stroke unit/ICU; ongoing care and rehab planning."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4",
+          "label": "Yes"
+        },
+        {
+          "from": "n3",
+          "to": "n5",
+          "label": "No"
+        },
+        {
+          "from": "n4",
+          "to": "n5"
+        },
+        {
+          "from": "n5",
+          "to": "n6"
+        },
+        {
+          "from": "n6",
+          "to": "n7"
+        },
+        {
+          "from": "n7",
+          "to": "n8",
+          "label": "Yes"
+        },
+        {
+          "from": "n7",
+          "to": "n9",
+          "label": "No"
+        },
+        {
+          "from": "n9",
+          "to": "n10"
+        },
+        {
+          "from": "n10",
+          "to": "n11"
+        },
+        {
+          "from": "n11",
+          "to": "n12",
+          "label": "No"
+        },
+        {
+          "from": "n11",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n12",
+          "to": "n13"
+        },
+        {
+          "from": "n13",
+          "to": "n14",
+          "label": "Yes"
+        },
+        {
+          "from": "n13",
+          "to": "n18",
+          "label": "No"
+        },
+        {
+          "from": "n14",
+          "to": "n16",
+          "label": "Yes"
+        },
+        {
+          "from": "n14",
+          "to": "n15",
+          "label": "No"
+        },
+        {
+          "from": "n15",
+          "to": "n18"
+        },
+        {
+          "from": "n16",
+          "to": "n18"
+        },
+        {
+          "from": "n18",
+          "to": "n19"
+        },
+        {
+          "from": "n19",
+          "to": "n20",
+          "label": "Yes"
+        },
+        {
+          "from": "n20",
+          "to": "n21",
+          "label": "Yes"
+        },
+        {
+          "from": "n20",
+          "to": "n22",
+          "label": "No"
+        },
+        {
+          "from": "n19",
+          "to": "n23",
+          "label": "No"
+        },
+        {
+          "from": "n23",
+          "to": "n24"
+        },
+        {
+          "from": "n22",
+          "to": "n24"
+        },
+        {
+          "from": "n21",
+          "to": "n25"
+        },
+        {
+          "from": "n24",
+          "to": "n26"
+        },
+        {
+          "from": "n25",
+          "to": "n26"
+        },
+        {
+          "from": "n15",
+          "to": "n26"
+        },
+        {
+          "from": "n26",
+          "to": "n27"
+        },
+        {
+          "from": "n27",
+          "to": "n28"
+        },
+        {
+          "from": "n28",
+          "to": "n29"
+        },
+        {
+          "from": "n8",
+          "to": "n29"
+        }
+      ]
+    }
+  },
+  "source": "stroke_v1_from_text"
+}

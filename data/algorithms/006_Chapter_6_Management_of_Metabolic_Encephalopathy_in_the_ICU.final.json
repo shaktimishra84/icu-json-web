@@ -1,0 +1,352 @@
+{
+  "chapter_file": "006_Chapter_6_Management_of_Metabolic_Encephalopathy_in_the_ICU.pdf",
+  "title_guess": "006_Chapter_6_Management_of_Metabolic_Encephalopathy_in_the_ICU",
+  "clinical_graph": {
+    "title": "Metabolic encephalopathy – ICU initial approach",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Metabolic encephalopathy – ICU initial approach"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; check vitals and temperature."
+        },
+        {
+          "id": "n3",
+          "type": "decision",
+          "text": "If hypoxia (SpO₂ < 90% or PaO₂ < 60 mmHg)",
+          "condition": "hypoxia"
+        },
+        {
+          "id": "n4",
+          "type": "action",
+          "text": "Correct oxygenation/ventilation; treat underlying cause."
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Proceed once oxygenation adequate."
+        },
+        {
+          "id": "n6",
+          "type": "decision",
+          "text": "If glucose < 70 mg/dL",
+          "condition": "glucose<70"
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Give IV dextrose and recheck in 5–10 min. Give thiamine 100 mg IV first if deficiency risk (malnutrition/alcohol use)"
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "If euglycemic, continue evaluation."
+        },
+        {
+          "id": "n9",
+          "type": "action",
+          "text": "Labs: electrolytes (Na, K, Ca, Mg), glucose, renal/liver panels, ammonia, TSH, ABG, lactate, osmolality, toxicology as indicated."
+        },
+        {
+          "id": "n10",
+          "type": "decision",
+          "text": "If severe sodium disorder (Na < 120 or > 160 mEq/L)",
+          "condition": "Na<120 or Na>160"
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "Correct sodium per protocol (hypertonic saline for severe hypo; slow correction; manage hypernatremia cautiously)."
+        },
+        {
+          "id": "n12",
+          "type": "action",
+          "text": "If sodium acceptable, proceed."
+        },
+        {
+          "id": "n13",
+          "type": "decision",
+          "text": "If severe hypercapnia or acidosis (PaCO₂↑ or pH < 7.20)",
+          "condition": "PaCO2 high or pH<7.20"
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Optimize ventilation; address cause; consider bicarbonate only if appropriate."
+        },
+        {
+          "id": "n15",
+          "type": "action",
+          "text": "If ABG acceptable, proceed."
+        },
+        {
+          "id": "n16",
+          "type": "decision",
+          "text": "If hyperammonemia",
+          "condition": "ammonia high"
+        },
+        {
+          "id": "n17",
+          "type": "action",
+          "text": "Start lactulose ± rifaximin; treat underlying hepatic cause."
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "If ammonia normal, proceed."
+        },
+        {
+          "id": "n19",
+          "type": "decision",
+          "text": "If uremic encephalopathy",
+          "condition": "uremia"
+        },
+        {
+          "id": "n20",
+          "type": "action",
+          "text": "Initiate dialysis (per nephrology) and supportive care."
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "If not uremic, proceed."
+        },
+        {
+          "id": "n22",
+          "type": "decision",
+          "text": "If toxic/metabolic ingestion suspected",
+          "condition": "tox suspected"
+        },
+        {
+          "id": "n23",
+          "type": "action",
+          "text": "Send tox screen; manage per antidotes (e.g., thiamine, naloxone if indicated)."
+        },
+        {
+          "id": "n24",
+          "type": "action",
+          "text": "If no tox suspicion, proceed."
+        },
+        {
+          "id": "n25",
+          "type": "decision",
+          "text": "If seizures or NCSE suspected",
+          "condition": "seizures/NCSE"
+        },
+        {
+          "id": "n26",
+          "type": "action",
+          "text": "Obtain EEG; treat seizures per protocol."
+        },
+        {
+          "id": "n27",
+          "type": "action",
+          "text": "If no seizures, proceed."
+        },
+        {
+          "id": "n28",
+          "type": "decision",
+          "text": "If deterioration, focal deficit, or meningism",
+          "condition": "deterioration/focal/meningism"
+        },
+        {
+          "id": "n29",
+          "type": "action",
+          "text": "Urgent CT brain ± further imaging as indicated."
+        },
+        {
+          "id": "n30",
+          "type": "action",
+          "text": "If stable, continue supportive and etiologic management."
+        },
+        {
+          "id": "n31",
+          "type": "end",
+          "text": "Ongoing ICU care per etiology; reassess response/complications."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4",
+          "label": "Yes"
+        },
+        {
+          "from": "n3",
+          "to": "n5",
+          "label": "No"
+        },
+        {
+          "from": "n4",
+          "to": "n5"
+        },
+        {
+          "from": "n5",
+          "to": "n6"
+        },
+        {
+          "from": "n6",
+          "to": "n7",
+          "label": "Yes"
+        },
+        {
+          "from": "n6",
+          "to": "n8",
+          "label": "No"
+        },
+        {
+          "from": "n7",
+          "to": "n8"
+        },
+        {
+          "from": "n8",
+          "to": "n9"
+        },
+        {
+          "from": "n9",
+          "to": "n10"
+        },
+        {
+          "from": "n10",
+          "to": "n11",
+          "label": "Yes"
+        },
+        {
+          "from": "n10",
+          "to": "n12",
+          "label": "No"
+        },
+        {
+          "from": "n11",
+          "to": "n12"
+        },
+        {
+          "from": "n12",
+          "to": "n13"
+        },
+        {
+          "from": "n13",
+          "to": "n14",
+          "label": "Yes"
+        },
+        {
+          "from": "n13",
+          "to": "n15",
+          "label": "No"
+        },
+        {
+          "from": "n14",
+          "to": "n15"
+        },
+        {
+          "from": "n15",
+          "to": "n16"
+        },
+        {
+          "from": "n16",
+          "to": "n17",
+          "label": "Yes"
+        },
+        {
+          "from": "n16",
+          "to": "n18",
+          "label": "No"
+        },
+        {
+          "from": "n17",
+          "to": "n18"
+        },
+        {
+          "from": "n18",
+          "to": "n19"
+        },
+        {
+          "from": "n19",
+          "to": "n20",
+          "label": "Yes"
+        },
+        {
+          "from": "n19",
+          "to": "n21",
+          "label": "No"
+        },
+        {
+          "from": "n20",
+          "to": "n21"
+        },
+        {
+          "from": "n21",
+          "to": "n22"
+        },
+        {
+          "from": "n22",
+          "to": "n23",
+          "label": "Yes"
+        },
+        {
+          "from": "n22",
+          "to": "n24",
+          "label": "No"
+        },
+        {
+          "from": "n23",
+          "to": "n24"
+        },
+        {
+          "from": "n24",
+          "to": "n25"
+        },
+        {
+          "from": "n25",
+          "to": "n26",
+          "label": "Yes"
+        },
+        {
+          "from": "n25",
+          "to": "n27",
+          "label": "No"
+        },
+        {
+          "from": "n26",
+          "to": "n27"
+        },
+        {
+          "from": "n27",
+          "to": "n28"
+        },
+        {
+          "from": "n28",
+          "to": "n29",
+          "label": "Yes"
+        },
+        {
+          "from": "n28",
+          "to": "n30",
+          "label": "No"
+        },
+        {
+          "from": "n29",
+          "to": "n30"
+        },
+        {
+          "from": "n30",
+          "to": "n31"
+        }
+      ]
+    }
+  },
+  "source": "metenc_v1_from_text"
+}

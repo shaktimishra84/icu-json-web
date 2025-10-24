@@ -1,0 +1,252 @@
+{
+  "chapter_file": "015_Chapter_15_Management_of_Delirium_in_the_ICU.json",
+  "title_guess": "015_Chapter_15_Management_of_Delirium_in_the_ICU",
+  "clinical_graph": {
+    "title": "Delirium in the ICU — practical pathway",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Delirium in the ICU — assessment and management"
+        },
+        {
+          "id": "n2",
+          "type": "action",
+          "text": "Stabilize ABCs; address pain, hypoxia/hypercapnia, hypoglycemia; review vitals/ECG, meds, substance use."
+        },
+        {
+          "id": "n3",
+          "type": "action",
+          "text": "Screen at least daily with CAM-ICU and/or ICDSC (score ≥4 = delirium). Document CAM-ICU/ICDSC frequency in orders"
+        },
+        {
+          "id": "n4",
+          "type": "decision",
+          "text": "Delirium present by CAM-ICU or ICDSC ≥4?",
+          "condition": "CAM-ICU positive or ICDSC≥4"
+        },
+        {
+          "id": "n5",
+          "type": "action",
+          "text": "Delirium confirmed."
+        },
+        {
+          "id": "n6",
+          "type": "action",
+          "text": "No delirium now; continue prevention bundle and routine screening."
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "Identify and correct contributors: hypoxia; electrolyte/metabolic (Na, Mg, Ca, urea, glucose); thyroid; thiamine deficiency; hepatic encephalopathy; infection; withdrawal; anticholinergic/sedative meds."
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "Non-pharmacologic bundle: reorientation (clocks/calendars), family engagement, early mobility, glasses/hearing aids, sleep protocol (minimize nighttime disruptions), ABCDEF bundle."
+        },
+        {
+          "id": "n9",
+          "type": "decision",
+          "text": "Danger to self/staff or essential care blocked despite non-pharm?",
+          "condition": "severe agitation or unsafe"
+        },
+        {
+          "id": "n10",
+          "type": "action",
+          "text": "Pharmacologic pathway (short course; lowest effective dose)."
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "Continue non-pharm bundle and frequent reorientation; avoid routine sedatives."
+        },
+        {
+          "id": "n12",
+          "type": "decision",
+          "text": "Alcohol/benzodiazepine withdrawal suspected?",
+          "condition": "AWS/BZD withdrawal"
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "Use benzodiazepines per protocol for withdrawal; adjuncts as needed; monitor RASS and respiratory status."
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Avoid routine benzodiazepines."
+        },
+        {
+          "id": "n15",
+          "type": "decision",
+          "text": "QTc ≥500 ms or high torsades risk / severe parkinsonism?",
+          "condition": "high antipsychotic risk"
+        },
+        {
+          "id": "n16",
+          "type": "action",
+          "text": "Prefer dexmedetomidine infusion (ventilated or monitored setting); watch bradycardia/hypotension."
+        },
+        {
+          "id": "n17",
+          "type": "action",
+          "text": "Use antipsychotic: haloperidol short-term for severe agitation; quetiapine/other atypical for ongoing symptoms; monitor QTc."
+        },
+        {
+          "id": "n18",
+          "type": "action",
+          "text": "Implement sleep-promoting protocol: cluster care, reduce nighttime noise/light, schedule procedures to allow uninterrupted sleep."
+        },
+        {
+          "id": "n19",
+          "type": "action",
+          "text": "Use PRE-DELIRIC / E-PRE-DELIRIC for risk stratification; target modifiable risks (benzodiazepine exposure, deep sedation)."
+        },
+        {
+          "id": "n20",
+          "type": "decision",
+          "text": "Improving with current plan?",
+          "condition": "clinical improvement"
+        },
+        {
+          "id": "n21",
+          "type": "action",
+          "text": "Taper/stop pharmacologic agents; maintain non-pharm bundle; continue daily screening."
+        },
+        {
+          "id": "n22",
+          "type": "action",
+          "text": "Re-search reversible causes; optimize non-pharm; adjust medication choice/dose; consider specialist input."
+        },
+        {
+          "id": "n23",
+          "type": "end",
+          "text": "Delirium resolved or controlled; prevention maintained; follow-up and documentation complete."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2"
+        },
+        {
+          "from": "n2",
+          "to": "n3"
+        },
+        {
+          "from": "n3",
+          "to": "n4"
+        },
+        {
+          "from": "n4",
+          "to": "n5",
+          "label": "Yes"
+        },
+        {
+          "from": "n4",
+          "to": "n6",
+          "label": "No"
+        },
+        {
+          "from": "n5",
+          "to": "n7"
+        },
+        {
+          "from": "n7",
+          "to": "n8"
+        },
+        {
+          "from": "n8",
+          "to": "n9"
+        },
+        {
+          "from": "n9",
+          "to": "n10",
+          "label": "Yes"
+        },
+        {
+          "from": "n9",
+          "to": "n11",
+          "label": "No"
+        },
+        {
+          "from": "n10",
+          "to": "n12"
+        },
+        {
+          "from": "n12",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n12",
+          "to": "n14",
+          "label": "No"
+        },
+        {
+          "from": "n14",
+          "to": "n15"
+        },
+        {
+          "from": "n13",
+          "to": "n15"
+        },
+        {
+          "from": "n15",
+          "to": "n16",
+          "label": "Yes"
+        },
+        {
+          "from": "n15",
+          "to": "n17",
+          "label": "No"
+        },
+        {
+          "from": "n11",
+          "to": "n18"
+        },
+        {
+          "from": "n16",
+          "to": "n18"
+        },
+        {
+          "from": "n17",
+          "to": "n18"
+        },
+        {
+          "from": "n18",
+          "to": "n19"
+        },
+        {
+          "from": "n19",
+          "to": "n20"
+        },
+        {
+          "from": "n20",
+          "to": "n21",
+          "label": "Yes"
+        },
+        {
+          "from": "n20",
+          "to": "n22",
+          "label": "No"
+        },
+        {
+          "from": "n21",
+          "to": "n23"
+        },
+        {
+          "from": "n22",
+          "to": "n23"
+        },
+        {
+          "from": "n6",
+          "to": "n23"
+        }
+      ]
+    }
+  },
+  "source": "delirium_v1_from_text"
+}

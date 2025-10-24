@@ -1,0 +1,183 @@
+{
+  "chapter_file": "002_Chapter_2_Management_of_Seizures_in_the_ICU.pdf",
+  "title_guess": "002_Chapter_2_Management_of_Seizures_in_the_ICU",
+  "clinical_graph": {
+    "title": "Status epilepticus – ICU protocol",
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "start",
+          "text": "Status epilepticus – ICU protocol"
+        },
+        {
+          "id": "n2",
+          "type": "decision",
+          "text": "If nonconvulsive SE suspected or no overt signs (EEG needed)",
+          "condition": "NCSE suspected"
+        },
+        {
+          "id": "n3",
+          "type": "action",
+          "text": "Obtain urgent EEG to detect nonconvulsive status epilepticus."
+        },
+        {
+          "id": "n4",
+          "type": "action",
+          "text": "Proceed to seizure-duration check."
+        },
+        {
+          "id": "n5",
+          "type": "decision",
+          "text": "If Seizure ongoing ≥5 min (t1)",
+          "condition": "Seizure ongoing ≥5 min (t1)"
+        },
+        {
+          "id": "n6",
+          "type": "action",
+          "text": "First-line benzodiazepine (choose one): lorazepam 0.1 mg/kg IV (max 4 mg); diazepam 0.15–0.2 mg/kg IV (max 10 mg); midazolam 10 mg IM if no IV."
+        },
+        {
+          "id": "n7",
+          "type": "action",
+          "text": "If <5 min and resolving, monitor and identify cause."
+        },
+        {
+          "id": "n8",
+          "type": "action",
+          "text": "Reassess: if seizures stopped → maintenance; if ongoing → second-line. Reassess at 2–5 min."
+        },
+        {
+          "id": "n9",
+          "type": "decision",
+          "text": "If seizures stopped",
+          "condition": "seizures stopped"
+        },
+        {
+          "id": "n10",
+          "type": "action",
+          "text": "Start maintenance antiepileptic regimen."
+        },
+        {
+          "id": "n11",
+          "type": "action",
+          "text": "Second-line antiepileptic: levetiracetam 60 mg/kg (max 4.5 g) or valproate 40 mg/kg (max 3 g) or fosphenytoin 20 mg PE/kg."
+        },
+        {
+          "id": "n12",
+          "type": "decision",
+          "text": "If Refractory or ≥30 min (t2)",
+          "condition": "Refractory or ≥30 min (t2)"
+        },
+        {
+          "id": "n13",
+          "type": "action",
+          "text": "Anesthetic infusion for refractory SE (propofol/ketamine/barbiturate) with ICU support. Consider continuous EEG after induction and during weaning."
+        },
+        {
+          "id": "n14",
+          "type": "action",
+          "text": "Neuroimaging and etiologic workup: CT/MRI; labs; LP if indicated."
+        },
+        {
+          "id": "n15",
+          "type": "end",
+          "text": "Seizure control achieved → continue care and etiologic management."
+        }
+      ],
+      "edges": [
+        {
+          "from": "n1",
+          "to": "n2",
+          "label": null
+        },
+        {
+          "from": "n2",
+          "to": "n3",
+          "label": "Yes"
+        },
+        {
+          "from": "n2",
+          "to": "n4",
+          "label": "No"
+        },
+        {
+          "from": "n3",
+          "to": "n5",
+          "label": null
+        },
+        {
+          "from": "n4",
+          "to": "n5",
+          "label": null
+        },
+        {
+          "from": "n5",
+          "to": "n6",
+          "label": "Yes"
+        },
+        {
+          "from": "n5",
+          "to": "n7",
+          "label": "No"
+        },
+        {
+          "from": "n6",
+          "to": "n8",
+          "label": null
+        },
+        {
+          "from": "n8",
+          "to": "n9",
+          "label": null
+        },
+        {
+          "from": "n9",
+          "to": "n10",
+          "label": "Yes"
+        },
+        {
+          "from": "n9",
+          "to": "n11",
+          "label": "No"
+        },
+        {
+          "from": "n11",
+          "to": "n12",
+          "label": null
+        },
+        {
+          "from": "n12",
+          "to": "n13",
+          "label": "Yes"
+        },
+        {
+          "from": "n12",
+          "to": "n14",
+          "label": "No"
+        },
+        {
+          "from": "n10",
+          "to": "n15",
+          "label": null
+        },
+        {
+          "from": "n13",
+          "to": "n15",
+          "label": null
+        },
+        {
+          "from": "n14",
+          "to": "n15",
+          "label": null
+        },
+        {
+          "from": "n7",
+          "to": "n15",
+          "label": null
+        }
+      ]
+    }
+  },
+  "source": "se_v1_from_text"
+}
