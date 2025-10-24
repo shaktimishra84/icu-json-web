@@ -1,39 +1,192 @@
 {
+  "schema": "icu_assistant_schema_v1",
+  "version": "1.0.0",
+  "issue_id": "altered_sensorium",
+  "title": "Altered Sensorium in the ICU",
   "chapter_file": "001_Chapter_1_Altered_Sensorium_in_the_ICU.pdf",
-  "title_guess": "001_Chapter_1_Altered_Sensorium_in_the_ICU",
-
   "assistant_flow": {
     "start": "A1",
     "nodes": [
-      { "id": "A1", "text": "Airway compromised (GCS < 8 or pooling secretions)?",
-        "options": [ { "label": "Yes", "next": "AIRWAY" }, { "label": "No", "next": "A2" } ] },
-
-      { "id": "AIRWAY", "text": "Intubate and secure airway; suction; C-spine if trauma; then continue.", "end": true },
-
-      { "id": "A2", "text": "SpO₂ < 94%?",
-        "options": [ { "label": "Yes", "next": "OXY" }, { "label": "No", "next": "A3" } ] },
-
-      { "id": "OXY", "text": "Give oxygen; optimize ventilation; reassess.", "end": true },
-
-      { "id": "A3", "text": "SBP < 100 or MAP < 65?",
-        "options": [ { "label": "Yes", "next": "CIRC" }, { "label": "No", "next": "A4" } ] },
-
-      { "id": "CIRC", "text": "Fluids; start vasopressor if MAP < 65 after fluids.", "end": true },
-
-      { "id": "A4", "text": "Glucose < 70 mg/dL?",
-        "options": [ { "label": "Yes", "next": "DEX" }, { "label": "No", "next": "A5" } ] },
-
-      { "id": "DEX", "text": "Give IV dextrose; recheck; treat cause.", "end": true },
-
-      { "id": "A5", "text": "Any seizure activity?",
-        "options": [ { "label": "Yes", "next": "SEIZ" }, { "label": "No", "next": "A6" } ] },
-
-      { "id": "SEIZ", "text": "Treat per seizure algorithm; protect airway; plan NCCT when stable.", "end": true },
-
-      { "id": "A6", "text": "Proceed: NCCT brain; targeted labs (ABG, lytes, RFT/LFT, CBC, ± ammonia/TSH/tox). Consider ONSD if raised ICP. Categorize cause and manage.", "end": true }
+      {
+        "id": "A1",
+        "text": "PRIMARY SURVEY — AIRWAY\n• Question: Airway compromised (GCS < 8 or pooling/obstruction)?\n• Signs: snoring/stridor/gurgling, absent gag, copious secretions, facial trauma.\n• If YES → Prepare RSI (pre-oxygenate, suction, checklist, backup airway).",
+        "options": [
+          { "label": "Yes", "next": "AIRWAY" },
+          { "label": "No",  "next": "B1" }
+        ]
+      },
+      {
+        "id": "AIRWAY",
+        "text": "ACTION — SECURE AIRWAY\n• RSI with cervical precautions if trauma.\n• After tube: confirm (capnography), set vent, start sedation/analgesia, OG/NG if safe.\n• Suction pooled secretions; consider aspiration prophylaxis.",
+        "options": [
+          { "label": "Continue → Breathing", "next": "B1" }
+        ]
+      },
+      {
+        "id": "B1",
+        "text": "PRIMARY SURVEY — BREATHING\n• Question: SpO₂ < 94% or increased work of breathing?\n• If YES → oxygen (nasal/prongs → face mask → NRBM; NIV if indicated and airway protected).",
+        "options": [
+          { "label": "Yes", "next": "OXY" },
+          { "label": "No",  "next": "C1" }
+        ]
+      },
+      {
+        "id": "OXY",
+        "text": "ACTION — OXYGENATION/VENTILATION\n• Titrate O₂ to SpO₂ ≥ 94% (or target per comorbidity).\n• If persistent hypoxemia/ventilatory failure → escalate (NIV/IMV) and evaluate causes.",
+        "options": [
+          { "label": "Continue → Circulation", "next": "C1" }
+        ]
+      },
+      {
+        "id": "C1",
+        "text": "PRIMARY SURVEY — CIRCULATION\n• Question: Hypotension (SBP < 100 mmHg or MAP < 65 mmHg)?\n• If YES → resuscitate.",
+        "options": [
+          { "label": "Yes", "next": "CIRC" },
+          { "label": "No",  "next": "D1" }
+        ]
+      },
+      {
+        "id": "CIRC",
+        "text": "ACTION — RESUSCITATION\n• Fluid bolus with isotonic crystalloid; reassess perfusion.\n• If MAP < 65 after fluids or fluid-averse → start norepinephrine and search for shock cause.",
+        "options": [
+          { "label": "Continue → Glucose", "next": "D1" }
+        ]
+      },
+      {
+        "id": "D1",
+        "text": "RAPID CHECK — GLUCOSE\n• Question: Hypoglycemia (glucose < 70 mg/dL)?",
+        "options": [
+          { "label": "Yes", "next": "DEX" },
+          { "label": "No",  "next": "E1" }
+        ]
+      },
+      {
+        "id": "DEX",
+        "text": "ACTION — HYPOGLYCEMIA\n• Give IV dextrose; recheck in 5–10 min; treat underlying cause (insulin/sulfonylurea, sepsis, adrenal).",
+        "options": [
+          { "label": "Continue → Seizure check", "next": "E1" }
+        ]
+      },
+      {
+        "id": "E1",
+        "text": "RAPID CHECK — SEIZURES\n• Question: Ongoing seizures or witnessed convulsions/NCSE suspected?",
+        "options": [
+          { "label": "Yes", "next": "SEIZ" },
+          { "label": "No",  "next": "F1" }
+        ]
+      },
+      {
+        "id": "SEIZ",
+        "text": "ACTION — SEIZURE CONTROL\n• Benzodiazepine first-line; load antiepileptic as indicated.\n• Protect airway and ventilation; avoid hypoglycemia/hypoxia/hyperthermia.",
+        "options": [
+          { "label": "Continue → Toxidrome screen", "next": "F1" }
+        ]
+      },
+      {
+        "id": "F1",
+        "text": "SCREEN — TOXIDROMES/REVERSIBLES\n• Suspicion of opioid/benzodiazepine toxicity, Wernicke’s, CO, organophosphates, etc.?",
+        "options": [
+          { "label": "Yes", "next": "TOX" },
+          { "label": "No",  "next": "G1" }
+        ]
+      },
+      {
+        "id": "TOX",
+        "text": "ACTION — TARGETED REVERSAL\n• Consider naloxone if opioid toxicity; flumazenil only in select cases; give thiamine before glucose if deficiency suspected.\n• Decontamination/supportive care per agent.",
+        "options": [
+          { "label": "Continue → Neuro imaging", "next": "G1" }
+        ]
+      },
+      {
+        "id": "G1",
+        "text": "NEURO IMAGING TRIAGE\n• Red flags: focal deficits, head trauma/anticoagulation, acute severe headache, new lateralizing signs, fever with focality.\n• If ANY red flag → urgent non-contrast CT brain.",
+        "options": [
+          { "label": "Red flag present → Urgent NCCT", "next": "NCCT_URG" },
+          { "label": "No red flags", "next": "G2" }
+        ]
+      },
+      {
+        "id": "NCCT_URG",
+        "text": "ACTION — URGENT NCCT BRAIN\n• Rule out hemorrhage/mass effect/large infarct; involve neurology/neurosurgery early.\n• Manage BP/ICP per findings; ensure antithrombotic history captured.",
+        "options": [
+          { "label": "Continue → Labs", "next": "G2" }
+        ]
+      },
+      {
+        "id": "G2",
+        "text": "INITIAL LAB PANEL\n• ABG; electrolytes (Na⁺/K⁺/Ca²⁺/Mg²⁺); renal/liver panel; CBC; glucose; ECG.\n• Consider: ammonia, TSH, cortisol, toxicology, cultures based on context.",
+        "options": [
+          { "label": "Continue → ICP concern", "next": "H1" }
+        ]
+      },
+      {
+        "id": "H1",
+        "text": "ICP CONCERN?\n• Signs: Cushing triad, anisocoria, papilledema, decerebrate posturing, very low GCS.\n• If YES → start ICP-lowering bundle.",
+        "options": [
+          { "label": "Yes", "next": "ICP" },
+          { "label": "No",  "next": "I1" }
+        ]
+      },
+      {
+        "id": "ICP",
+        "text": "ACTION — ICP BUNDLE\n• Head-up 30°, neutral neck; adequate sedation/analgesia; PaCO₂ 35–40; mannitol or hypertonic saline as indicated; avoid hypotension/hypoxia.\n• Arrange urgent imaging and specialist review.",
+        "options": [
+          { "label": "Continue → Categorize cause", "next": "I1" }
+        ]
+      },
+      {
+        "id": "I1",
+        "text": "CATEGORIZE ETIOLOGY\n• Infection (fever, meningism, sepsis), Metabolic/Endocrine (Na⁺, Ca²⁺, uremia, hepatic failure, hypo/hyperthyroid, adrenal), Structural (ICH/SAH/ischemia/mass), Psychogenic (dx of exclusion).\n• Choose likely category to see next actions.",
+        "options": [
+          { "label": "Infection", "next": "INFECT" },
+          { "label": "Metabolic/Endocrine", "next": "METAB" },
+          { "label": "Structural CNS", "next": "STRUCT" },
+          { "label": "Psychogenic (exclusion)", "next": "PSYCH" },
+          { "label": "Unclear", "next": "FOLLOW" }
+        ]
+      },
+      {
+        "id": "INFECT",
+        "text": "PATHWAY — INFECTION\n• Sepsis bundle (cultures, broad-spectrum antibiotics per source/local policy);\n• Consider LP when safe (imaging first if focal deficits/ICP risk); antivirals if encephalitis suspected.",
+        "options": [
+          { "label": "Finish", "next": "END" }
+        ]
+      },
+      {
+        "id": "METAB",
+        "text": "PATHWAY — METABOLIC/ENDOCRINE\n• Correct Na⁺ (rate limits), Ca²⁺, Mg²⁺; manage uremia/hepatic encephalopathy; check TSH/free T4, cortisol; treat DKA/HHS as indicated.",
+        "options": [
+          { "label": "Finish", "next": "END" }
+        ]
+      },
+      {
+        "id": "STRUCT",
+        "text": "PATHWAY — STRUCTURAL CNS\n• If ICH/SAH/large stroke/mass: BP/ICP targets; neurology/neurosurgery consult; reversal of anticoagulation if needed; DVT prophylaxis planning.",
+        "options": [
+          { "label": "Finish", "next": "END" }
+        ]
+      },
+      {
+        "id": "PSYCH",
+        "text": "PATHWAY — PSYCHOGENIC\n• Only after organic causes excluded; check for inconsistencies; psych consult; avoid unnecessary sedatives.",
+        "options": [
+          { "label": "Finish", "next": "END" }
+        ]
+      },
+      {
+        "id": "FOLLOW",
+        "text": "UNCLEAR ETIOLOGY — NEXT STEPS\n• Reassess exam; sedation hold; repeat glucose/ABG/electrolytes; collateral history/med list; delirium screen; consider EEG if persistent altered state.",
+        "options": [
+          { "label": "Finish", "next": "END" }
+        ]
+      },
+      {
+        "id": "END",
+        "text": "DISPOSITION/REASSESSMENT\n• Continue targeted pathway; document major decisions and times; plan monitoring and repeat neuro checks.",
+        "options": [
+          { "label": "Back to Home", "next": "A1" }
+        ]
+      }
     ]
-  },
-
-  "clinical_graph": { ... },
-  "source": "v4_from_v3"
+  }
 }
